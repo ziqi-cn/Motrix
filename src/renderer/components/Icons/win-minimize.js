@@ -6,7 +6,7 @@ Icon.register({
     'height': 12,
     'raw': `<line x1="1" y1="6" x2="11" y2="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`,
     'g': {
-      'stroke': 'currentColor',
+      'stroke': '#CBCBCB',
       'stroke-linecap': 'round',
       'stroke-linejoin': 'round',
       'stroke-width': '1'

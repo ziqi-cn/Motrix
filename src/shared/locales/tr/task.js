@@ -115,5 +115,9 @@ export default {
   'bt-download-complete-tips': 'Ipuçları: Eğer tohumlama sona erdirmek için görev durdurabilirsiniz',
   'bt-stopping-seeding-tip': 'Ekim işlemini durdurmak, bağlantıyı kesmek biraz zaman alacak, lütfen bekleyin...',
   'download-fail-message': '{{taskName}} görevi indirilemedi',
-  'download-fail-notify': 'İndirme başarısız'
+  'download-fail-notify': 'İndirme başarısız',
+  'task-add':'Görev ekle',
+  'task-all-start' : 'Hepsini başlat',
+  'task-all-stop' : 'hepsini durdur',
+  'task-not-data' : 'Sorma'
 }

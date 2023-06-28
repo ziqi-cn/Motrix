@@ -137,7 +137,7 @@ let rendererConfig = {
       chunkFilename: '[id].css'
     }),
     new HtmlWebpackPlugin({
-      title: 'Motrix',
+      title: 'imFile',
       filename: 'index.html',
       chunks: ['index'],
       template: path.resolve(__dirname, '../src/index.ejs'),

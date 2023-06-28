@@ -115,5 +115,9 @@ export default {
   'bt-download-complete-tips': 'Совет: Вы можете остановить задачу, чтобы остановить раздачу',
   'bt-stopping-seeding-tip': 'Остановка посева, потребуется некоторое время, чтобы отключиться, пожалуйста, подождите...',
   'download-fail-message': 'Не удалось загрузить {{taskName}}',
-  'download-fail-notify': 'Ошибка загрузки'
+  'download-fail-notify': 'Ошибка загрузки',
+  'task-add':'Добавить задачу',
+  'task-all-start' : 'Начать все',
+  'task-all-stop' : 'приостановить все',
+  'task-not-data' : 'Не спрашивай'
 }

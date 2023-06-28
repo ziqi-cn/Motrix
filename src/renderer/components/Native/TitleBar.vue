@@ -76,12 +76,13 @@
     margin: 0;
     z-index: 5100;
     font-size: 0;
+    color: #fff;
     > li {
       display: inline-block;
       padding: 5px 18px;
       font-size: 16px;
       margin: 0;
-      color: $--titlebar-actions-color;
+      color: #fff;
       &:hover {
         background-color: $--titlebar-actions-active-background;
       }

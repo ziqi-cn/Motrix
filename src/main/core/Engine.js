@@ -28,7 +28,7 @@ export default class Engine {
 
   start () {
     const pidPath = getEnginePidPath()
-    logger.info('[Motrix] Engie pid path:', pidPath)
+    logger.info('[imFile] Engie pid path:', pidPath)
 
     if (this.instance) {
       return
@@ -47,27 +47,27 @@ export default class Engine {
       try {
         unlink(pidPath, (err) => {
           if (err) {
-            logger.warn(`[Motrix] Unlink engine process pid file failed: ${err}`)
+            logger.warn(`[imFile] Unlink engine process pid file failed: ${err}`)
           }
         })
       } catch (err) {
-        logger.warn(`[Motrix] Unlink engine process pid file failed: ${err}`)
+        logger.warn(`[imFile] Unlink engine process pid file failed: ${err}`)
       }
     })
 
     if (is.dev()) {
       this.instance.stdout.on('data', (data) => {
-        logger.log('[Motrix] engine stdout===>', data.toString())
+        logger.log('[imFile] engine stdout===>', data.toString())
       })
 
       this.instance.stderr.on('data', (data) => {
-        logger.log('[Motrix] engine stderr===>', data.toString())
+        logger.log('[imFile] engine stderr===>', data.toString())
       })
     }
   }
 
   stop () {
-    logger.info('[Motrix] engine.stop.instance')
+    logger.info('[imFile] engine.stop.instance')
     if (this.instance) {
       this.instance.kill()
       this.instance = null
@@ -77,7 +77,7 @@ export default class Engine {
   writePidFile (pidPath, pid) {
     writeFile(pidPath, pid, (err) => {
       if (err) {
-        logger.error(`[Motrix] Write engine process pid failed: ${err}`)
+        logger.error(`[imFile] Write engine process pid failed: ${err}`)
       }
     })
   }
@@ -86,7 +86,7 @@ export default class Engine {
     const result = getAria2BinPath(platform, arch)
     const binIsExist = existsSync(result)
     if (!binIsExist) {
-      logger.error('[Motrix] engine bin is not exist:', result)
+      logger.error('[imFile] engine bin is not exist:', result)
       throw new Error(this.i18n.t('app.engine-missing-message'))
     }
 

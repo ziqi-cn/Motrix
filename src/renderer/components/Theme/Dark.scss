@@ -212,8 +212,8 @@
 
   .el-switch__core,
   .el-checkbox__inner {
-    border-color: #606060;
-    background-color: #5c5d5f;
+    border-color: #282828;
+    background-color: #282828;
   }
 
   .el-select .el-input .el-select__caret {
@@ -280,7 +280,7 @@
   }
 
   .el-button {
-    background-color: #5b5b5b;
+    background-color: $--color-text-primary;
     border-color: #606060;
     color: #e6e6e6;
     &:hover,
@@ -305,7 +305,7 @@
 
   .el-button--danger.is-plain {
     color: #ff6157;
-    background-color: #5b5b5b;
+    background-color: $--color-text-primary;
     border-color: #ffc0bc;
   }
 
@@ -455,7 +455,7 @@
   }
 
   .el-tag.el-tag--info.el-tag--light {
-    background-color: #5b5b5b;
+    background-color: $--color-text-primary;
     border-color: #606060;
     color: #e6e6e6;
   }

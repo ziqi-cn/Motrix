@@ -30,7 +30,7 @@ export default class Context {
       'aria2-conf-path': getAria2ConfPath(platform, arch)
     }
 
-    logger.info('[Motrix] Context.init===>', this.context)
+    logger.info('[imFile] Context.init===>', this.context)
   }
 
   get (key) {

@@ -3,7 +3,7 @@
     class="select-directory"
     @click.stop="onFolderClick"
   >
-    <mo-icon name="folder" width="10" height="10" />
+    <mo-icon name="folder" width="22" height="22" />
   </el-button>
 </template>
 
@@ -32,3 +32,9 @@
     }
   }
 </script>
+
+<style lang="scss">
+  .select-directory{
+    background: $--background-color-gray;
+  }
+</style>

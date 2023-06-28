@@ -76,5 +76,9 @@
   textarea {
     line-height: 2;
   }
+  .el-textarea__inner{
+    background: $--dk-app-background;
+    border: none;
+  }
 }
 </style>

@@ -1,2 +1,2 @@
 provider: generic
-url: 'https://dl.motrix.app/releases/'
+url: 'https://imfile-backend.s3.ap-northeast-1.amazonaws.com/update/'

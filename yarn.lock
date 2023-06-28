@@ -3311,7 +3311,7 @@ ejs@^3.1.8:
 
 electron-builder@^24.4.0:
   version "24.4.0"
-  resolved "https://registry.yarnpkg.com/electron-builder/-/electron-builder-24.4.0.tgz#8846efa45bac8f6b9afc181abf71a4e12530f045"
+  resolved "https://registry.npmmirror.com/electron-builder/-/electron-builder-24.4.0.tgz#8846efa45bac8f6b9afc181abf71a4e12530f045"
   integrity sha512-D5INxodxaUIJgEX6p/fqBd8wQNS8XRAToNIJ9SQC+taNS5D73ZsjLuXiRraFGCB0cVk9KeKhEkdEOH5AaVya4g==
   dependencies:
     app-builder-lib "24.4.0"

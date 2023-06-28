@@ -1,13 +1,13 @@
 {
-  "name": "Motrix",
-  "version": "1.8.19",
+  "name": "imFile",
+  "version": "1.0.0",
   "description": "A full-featured download manager",
-  "homepage": "https://motrix.app",
+  "homepage": "https://imfile.io",
   "author": {
-    "name": "Dr_rOot",
-    "email": "agalwood.net@gmail.com"
+    "name": "Imfile",
+    "email": "imfileapp@gmail.com"
   },
-  "copyright": "Copyright© Dr_rOot",
+  "copyright": "Copyright© Imfile",
   "license": "MIT",
   "main": "./dist/electron/main.js",
   "repository": {

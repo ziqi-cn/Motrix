@@ -154,7 +154,7 @@ export const checkIsSupportedSchema = (url = '') => {
     str.startsWith('magnet:') ||
     str.startsWith('thunder:') ||
     str.startsWith('mo:') ||
-    str.startsWith('motrix:')
+    str.startsWith('imfile:')
   ) {
     return true
   } else {
@@ -205,7 +205,7 @@ export const showItemInFolder = (fullPath) => {
   fullPath = resolve(fullPath)
   access(fullPath, constants.F_OK, (err) => {
     if (err) {
-      logger.warn(`[Motrix] ${fullPath} ${err ? 'does not exist' : 'exists'}`)
+      logger.warn(`[imFile] ${fullPath} ${err ? 'does not exist' : 'exists'}`)
       return
     }
 

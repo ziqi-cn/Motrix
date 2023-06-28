@@ -7,21 +7,8 @@
       :md="6"
       :lg="6"
     >
-      <div v-if="task.completedLength > 0 || task.totalLength > 0">
-        <span>{{ task.completedLength | bytesToSize(2) }}</span>
-        <span v-if="task.totalLength > 0"> / {{ task.totalLength | bytesToSize(2) }}</span>
-      </div>
-    </el-col>
-    <el-col
-      class="task-progress-info-right"
-      v-if="isActive"
-      :xs="12"
-      :sm="17"
-      :md="18"
-      :lg="18"
-    >
-      <div class="task-speed-info">
-        <div class="task-speed-text" v-if="isBT">
+    <div class="task-speed-info" v-if="isActive">
+        <div class="task-speed-text">
           <i><mo-icon name="arrow-up" width="10" height="14" /></i>
           <span>{{ task.uploadSpeed | bytesToSize }}/s</span>
         </div>
@@ -53,6 +40,10 @@
           <span>{{ task.connections }}</span>
         </div>
       </div>
+    </el-col>
+    <el-col
+      class="task-progress-info-right"
+    >
     </el-col>
   </el-row>
 </template>
@@ -115,10 +106,7 @@
   min-height: 0.875rem;
   text-align: left;
 }
-.task-progress-info-right {
-  min-height: 0.875rem;
-  text-align: right;
-}
+
 .task-speed-info {
   font-size: 0;
   & > .task-speed-text {

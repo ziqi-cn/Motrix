@@ -1,0 +1,121 @@
+<template>
+    <div class="task-state-actions">
+        <ul class="task-state-ul">
+            <li @click="onResumeAllClick" class="task-action-start">
+                <i class="task-action">
+                    <mo-icon name="task-play" width="15" height="15" />
+                </i>
+                <span>{{ $t('task.task-all-start') }}</span>
+            </li>
+            <li @click="onPauseAllClick" class="task-action-stop">
+                <i class="task-action">
+                    <mo-icon name="task-pause" width="15" height="15" />
+                </i>
+                <span>{{ $t('task.task-all-stop') }}</span>
+            </li>
+        </ul>
+    </div>
+</template>
+
+<script>
+  import { mapState } from 'vuex'
+  import { bytesToSize, timeFormat } from '@shared/utils'
+  import '@/components/Icons/task-pause'
+  import '@/components/Icons/task-play'
+  export default {
+    name: 'state-task-actions',
+    components: {
+    },
+    props: ['task'],
+    data () {
+      return {
+        refreshing: false
+      }
+    },
+    computed: {
+        ...mapState('task', {
+            currentList: state => state.currentList,
+            selectedGidListCount: state => state.selectedGidList.length
+        })
+    },
+    filters: {
+      bytesToSize,
+      timeFormat
+    },
+    methods: {
+      onResumeAllClick () {
+        this.$store.dispatch('task/resumeAllTask')
+          .then(() => {
+            // this.$msg.success(this.$t('task.resume-all-task-success'))
+          })
+          .catch(({ code }) => {
+            if (code === 1) {
+              this.$msg.error(this.$t('task.resume-all-task-fail'))
+            }
+          })
+      },
+      onPauseAllClick () {
+        this.$store.dispatch('task/pauseAllTask')
+          .then(() => {
+            // this.$msg.success(this.$t('task.pause-all-task-success'))
+          })
+          .catch(({ code }) => {
+            if (code === 1) {
+              this.$msg.error(this.$t('task.pause-all-task-fail'))
+            }
+          })
+      }
+    }
+  }
+</script>
+
+<style lang="scss">
+.task-state-actions {
+    position: absolute;
+    display: inline-flex;
+    top: 10px;
+    right: 0;
+    height: 50px;
+    padding: 0;
+    overflow: hidden;
+    user-select: none;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+    transition: all 0.25s;
+
+    .task-state-ul {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        .task-action-start {
+            display: inline-flex;
+            padding: 10px;
+            margin: 0 10px;
+            background: $--background-color-gray;
+            color: #fff;
+            align-items: center;
+            justify-content: center;
+            .task-action {
+                font-size: 0;
+                cursor: pointer;
+                margin: 0 10px;
+            }
+        }
+        .task-action-stop {
+            display: inline-flex;
+            padding: 10px;
+            background: $--background-color-gray;
+            color: #fff;
+            align-items: center;
+            justify-content: center;
+            .task-action {
+                font-size: 0;
+                cursor: pointer;
+                margin: 0 10px;
+            }
+        }
+    }
+}
+</style>

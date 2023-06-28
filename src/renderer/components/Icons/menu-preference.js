@@ -4,12 +4,7 @@ Icon.register({
   'menu-preference': {
     'width': 24,
     'height': 24,
-    'raw': `<line fill="none" stroke-miterlimit="10" x1="14" y1="4" x2="23" y2="4"/> <line fill="none" stroke-miterlimit="10" x1="1" y1="4" x2="4" y2="4"/> <line data-color="color-2" fill="none" stroke-miterlimit="10" x1="22" y1="12" x2="23" y2="12"/> <line data-color="color-2" fill="none" stroke-miterlimit="10" x1="1" y1="12" x2="12" y2="12"/> <line fill="none" stroke-miterlimit="10" x1="14" y1="20" x2="23" y2="20"/> <line fill="none" stroke-miterlimit="10" x1="1" y1="20" x2="4" y2="20"/> <circle fill="none" stroke-miterlimit="10" cx="7" cy="4" r="3"/> <circle data-color="color-2" fill="none" stroke-miterlimit="10" cx="15" cy="12" r="3"/> <circle fill="none" stroke-miterlimit="10" cx="7" cy="20" r="3"/>`,
-    'g': {
-      'stroke': 'currentColor',
-      'stroke-linecap': 'round',
-      'stroke-linejoin': 'round',
-      'stroke-width': '2'
-    }
+    'raw': `<path fill-rule="evenodd" clip-rule="evenodd" d="M11.2247 1.88832C11.7043 1.61144 12.2951 1.61144 12.7747 1.88832L20.3689 6.27285C20.8485 6.54974 21.1439 7.06143 21.1439 7.61519V16.3843C21.1439 16.938 20.8485 17.4497 20.3689 17.7266L12.7747 22.1111C12.2951 22.388 11.7043 22.388 11.2247 22.1111L3.63047 17.7266C3.1509 17.4497 2.85547 16.938 2.85547 16.3843V7.61519C2.85547 7.06143 3.1509 6.54974 3.63047 6.27285L11.2247 1.88832ZM11.9997 4.55857L5.55547 8.27915V15.7203L11.9997 19.4409L18.4439 15.7203V8.27915L11.9997 4.55857Z" fill="#CBCBCB"/>
+    <path d="M14.1598 11.9998C14.1598 13.1928 13.1928 14.1598 11.9998 14.1598C10.8069 14.1598 9.83984 13.1928 9.83984 11.9998C9.83984 10.8069 10.8069 9.83984 11.9998 9.83984C13.1928 9.83984 14.1598 10.8069 14.1598 11.9998Z" fill="#D9D9D9"/>`,
   }
 })

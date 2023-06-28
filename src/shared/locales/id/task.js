@@ -115,5 +115,9 @@ export default {
   'bt-download-complete-tips': 'Tips: Anda dapat menghentikan tugas untuk mengakhiri penyemaian',
   'bt-stopping-seeding-tip': 'Menghentikan penyemaian, perlu beberapa saat untuk memutuskan, harap tunggu...',
   'download-fail-message': 'Gagal mengunduh {{taskName}}',
-  'download-fail-notify': 'Unduhan Gagal'
+  'download-fail-notify': 'Unduhan Gagal',
+  'task-add':'Tambahkan tugas',
+  'task-all-start' : 'Mulai semua',
+  'task-all-stop' : 'jeda semua',
+  'task-not-data' : 'Tidak bertanya'
 }

@@ -1,22 +1,32 @@
 <template>
   <div :key="task.gid" class="task-item" v-on:dblclick="onDbClick">
-    <div class="task-name" :title="taskFullName">
-      <span>{{ taskFullName }}</span>
-    </div>
-    <mo-task-item-actions mode="LIST" :task="task" />
+    <el-row>
+      <el-col :span="16">
+        <div class="task-name" :title="taskFullName">
+        <span>{{ taskFullName }}</span>
+        </div>
+      </el-col>
+      <el-col :span="8">
+        <div v-if="task.completedLength > 0 || task.totalLength > 0" class="task-progress-num">
+        <span>{{ task.completedLength | bytesToSize(2) }}</span>
+        <span v-if="task.totalLength > 0"> / {{ task.totalLength | bytesToSize(2) }}</span>
+        </div>
+      </el-col>
+    </el-row>
     <div class="task-progress">
       <mo-task-progress
         :completed="Number(task.completedLength)"
         :total="Number(task.totalLength)"
         :status="taskStatus"
       />
-      <mo-task-progress-info :task="task" />
     </div>
+    <mo-task-progress-info :task="task" />
+    <mo-task-item-actions mode="LIST" :task="task" />
   </div>
 </template>
 
 <script>
-  import { checkTaskIsSeeder, getTaskName } from '@shared/utils'
+  import { bytesToSize, checkTaskIsSeeder, getTaskName } from '@shared/utils'
   import { TASK_STATUS } from '@shared/constants'
   import { openItem, getTaskFullPath } from '@/utils/native'
   import TaskItemActions from './TaskItemActions'
@@ -81,6 +91,9 @@
       toggleTask () {
         this.$store.dispatch('task/toggleTask', this.task)
       }
+    },
+    filters: {
+      bytesToSize
     }
   }
 </script>
@@ -88,29 +101,23 @@
 <style lang="scss">
 .task-item {
   position: relative;
-  min-height: 78px;
+  min-height: 80px;
   padding: 16px 12px;
   background-color: $--task-item-background;
-  border: 1px solid $--task-item-border-color;
-  border-radius: 6px;
+  border: 2px solid $--task-item-border-color;
+  border-radius: 0px;
   margin-bottom: 16px;
   transition: $--border-transition-base;
   &:hover {
     border-color: $--task-item-hover-border-color;
-  }
-  .task-item-actions {
-    position: absolute;
-    top: 16px;
-    right: 12px;
   }
 }
 .selected .task-item {
   border-color: $--task-item-hover-border-color;
 }
 .task-name {
-  color: #505753;
+  color: #CBCBCB;
   margin-bottom: 1.5rem;
-  margin-right: 200px;
   word-break: break-all;
   min-height: 26px;
   &> span {
@@ -122,5 +129,26 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
   }
+}
+.task-progress-num{
+  display: flex;
+  justify-content: flex-end;
+  color: #CBCBCB;
+  margin-bottom: 1.5rem;
+  min-height: 26px;
+  &> span {
+    font-size: 14px;
+    line-height: 26px;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+}
+.task-item-actions {
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
 }
 </style>

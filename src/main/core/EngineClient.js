@@ -37,7 +37,7 @@ export default class EngineClient {
   }
 
   connect () {
-    logger.info('[Motrix] main engine client connect', this.options)
+    logger.info('[imFile] main engine client connect', this.options)
     const { host, port, secret } = this.options
     this.client = new Aria2({
       host,
@@ -48,12 +48,12 @@ export default class EngineClient {
 
   async call (method, ...args) {
     return this.client.call(method, ...args).catch((err) => {
-      logger.warn('[Motrix] call client fail:', err.message)
+      logger.warn('[imFile] call client fail:', err.message)
     })
   }
 
   async changeGlobalOption (options) {
-    logger.info('[Motrix] change engine global option:', options)
+    logger.info('[imFile] change engine global option:', options)
     const args = formatOptionsForEngine(options)
 
     return this.call('changeGlobalOption', args)

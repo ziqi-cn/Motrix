@@ -1,5 +1,5 @@
 export default {
-  'official-website': 'Motrix Website',
+  'official-website': 'imFile Website',
   'manual': 'Panduan',
   'release-notes': 'Catatan Rilis...',
   'report-problem': 'Laporkan Masalah',

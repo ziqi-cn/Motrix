@@ -115,5 +115,9 @@ export default {
   'bt-download-complete-tips': 'نکات: شما می‌توانید با توقف یک وظیفه، به بذرپاشی آن را پایان دهید',
   'bt-stopping-seeding-tip': 'متوقف کردن بذرپاشی، قطع ارتباط مدتی طول خواهد کشید، لطفاً صبر کنید ...',
   'download-fail-message': 'بارگیری {{taskName}} شکست خورد',
-  'download-fail-notify': 'بارگیری شکست خورد'
+  'download-fail-notify': 'بارگیری شکست خورد',
+  'task-add':'إضافة مهمة',
+  'task-all-start' : 'ابدأ كل شيء',
+  'task-all-stop' : 'وقفة جميع',
+  'task-not-data' : 'لا توجد مهمة'
 }

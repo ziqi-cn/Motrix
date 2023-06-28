@@ -238,14 +238,24 @@ iframe {
     position: relative;
     padding: 44px 0 12px;
     margin: 0 16px;
-    border-bottom: 2px solid $--panel-border-color;
+    border-bottom: none;
     user-select: none;
-    h4 {
-      margin: 0;
-      color: $--panel-title-color;
-      font-size: 16px;
-      font-weight: normal;
-      line-height: 24px;
+
+    .panel-row{
+      h4 {
+        margin: 0;
+        color: $--subnav-title-color;
+        font-size: 13px;
+        font-weight: normal;
+        line-height: 24px;
+      }
+      .active {
+        h4{
+          font-size: 13px;
+          font-weight: normal;
+          color: $--app-text-select-color;
+        }
+      }
     }
   }
   .panel-content {
@@ -253,6 +263,8 @@ iframe {
     padding: 0;
     height: 100%;
   }
+  
+
 }
 
 .form-actions {

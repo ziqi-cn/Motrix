@@ -1,5 +1,5 @@
 export default {
-  'app': 'Motrix',
+  'app': 'imFile',
   'file': 'Файл',
   'task': 'Задания',
   'edit': 'Редактировать',

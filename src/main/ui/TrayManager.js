@@ -150,7 +150,7 @@ export default class TrayManager extends EventEmitter {
     // tray.setPressedImage(inverseIcon)
 
     if (!this.macOS) {
-      tray.setToolTip('Motrix')
+      tray.setToolTip('imFile')
     }
   }
 
@@ -357,7 +357,7 @@ export default class TrayManager extends EventEmitter {
   }
 
   destroy () {
-    logger.info('[Motrix] TrayManager.destroy')
+    logger.info('[imFile] TrayManager.destroy')
     if (tray) {
       this.unbindEvents()
     }

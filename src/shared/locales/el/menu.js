@@ -1,5 +1,5 @@
 export default {
-  'app': 'Motrix',
+  'app': 'imFile',
   'file': 'Αρχείο',
   'task': 'Εργασία',
   'edit': 'Επεξεργασία',

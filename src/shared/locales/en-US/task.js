@@ -116,5 +116,9 @@ export default {
   'bt-download-complete-tips': 'Tips: You can stop a task to end its seeding',
   'bt-stopping-seeding-tip': 'Stopping seeding, it will take some time to disconnect, please wait patiently',
   'download-fail-message': 'Failed to download {{taskName}}',
-  'download-fail-notify': 'Download Failed'
+  'download-fail-notify': 'Download Failed',
+  'task-add':'Add task',
+  'task-all-start' : 'Start all',
+  'task-all-stop' : 'pause all',
+  'task-not-data' : 'No task'
 }

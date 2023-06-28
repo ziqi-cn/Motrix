@@ -11,7 +11,7 @@
     :on-exceed="handleExceed"
     :auto-upload="false"
     :show-file-list="false">
-    <i class="upload-inbox-icon"><mo-icon name="inbox" width="24" height="24" /></i>
+    <!-- <i class="upload-inbox-icon"><mo-icon name="inbox" width="24" height="24" /></i> -->
     <div class="el-upload__text">
       {{ $t('task.select-torrent') }}
       <div class="torrent-name" v-if="name">{{ name }}</div>
@@ -105,7 +105,7 @@
 
         remote(file.raw, { timeout: 60 * 1000 }, (err, parsedTorrent) => {
           if (err) throw err
-          console.log('[Motrix] parsed torrent: ', parsedTorrent)
+          console.log('[imFile] parsed torrent: ', parsedTorrent)
           this.files = listTorrentFiles(parsedTorrent.files)
           this.$refs.torrentFileList.toggleAllSelection()
 
@@ -150,16 +150,18 @@
   width: 100%;
   .el-upload, .el-upload-dragger {
     width: 100%;
+    border: 4px;
+    background: $--background-color-gray;
   }
   .el-upload-dragger {
     border-radius: 4px;
     padding: 24px;
     height: auto;
   }
-  .upload-inbox-icon {
-    display: inline-block;
-    margin-bottom: 12px;
-  }
+  // .upload-inbox-icon {
+  //   display: inline-block;
+  //   margin-bottom: 12px;
+  // }
   .torrent-name {
     margin-top: 4px;
     font-size: $--font-size-small;
@@ -177,6 +179,27 @@
     margin-bottom: 15px;
     font-size: 12px;
     line-height: 16px;
+  }
+  .mo-task-files{
+    border-color: $--background-color-gray !important;
+    background: $--background-color-gray !important;
+    .el-table__header{
+      background: $--background-color-gray !important;
+    }
+    .el-table__cell{
+      border-color: $--background-color-gray !important;
+      background: $--background-color-gray !important;
+    }
+  }
+  .el-table__body{
+    border-color: $--background-color-gray !important;
+    background: $--background-color-gray !important;
+  }
+  .el-table__body-wrapper.is-scrolling-none{
+    background: $--background-color-gray !important;
+  }
+  .el-table.el-table--fit.el-table--striped.el-table--enable-row-hover.el-table--enable-row-transition.el-table--mini{
+    background: $--background-color-gray !important;
   }
   .torrent-actions {
     text-align: right;
