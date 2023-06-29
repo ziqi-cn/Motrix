@@ -159,6 +159,13 @@ export default class Launcher extends EventEmitter {
     app.on('ready', () => {
       global.application = new Application()
 
+      app.configureHostResolver({
+        secureDnsMode: 'secure',
+        secureDnsServers: [
+          'https://1.1.1.1/dns-query'
+        ]
+      })
+
       const { openedAtLogin } = this
       global.application.start('index', {
         openedAtLogin

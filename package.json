@@ -1,6 +1,6 @@
 {
   "name": "imFile",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A full-featured download manager",
   "homepage": "https://imfile.io",
   "author": {
@@ -17,8 +17,8 @@
   "scripts": {
     "release": "npm run build --publish onTagOrDraft",
     "build": "node .electron-vue/build.js && electron-builder",
-    "build:win7": "node .electron-vue/build.js && electron-builder --win --config.directories.output=release/win32/7",
-    "build:win10": "node .electron-vue/build.js && electron-builder --win --config.directories.output=release/win32/10",
+    "build:win7": "pnpm up electron@22 && node .electron-vue/build.js && electron-builder --win --config.directories.output=release/win32/7",
+    "build:win10": "pnpm up electron@25 && node .electron-vue/build.js && electron-builder --win --config.directories.output=release/win32/10",
     "build:applesilicon": "node .electron-vue/build.js && electron-builder --arm64 --mac",
     "build:github": "node .electron-vue/build.js",
     "build:dir": "node .electron-vue/build.js && electron-builder --dir",
