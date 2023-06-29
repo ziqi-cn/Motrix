@@ -184,10 +184,6 @@
     },
     "publish": [
       {
-        "provider": "generic",
-        "url": "https://dl.imfile.io/"
-      },
-      {
         "provider": "github"
       }
     ]
