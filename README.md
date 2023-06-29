@@ -1,32 +1,32 @@
-# Motrix
+# imFile
 
 <p>
-  <a href="https://motrix.app">
+  <a href="https://imfile.io/">
     <img src="./static/512x512.png" width="256" alt="Motrix App Icon" />
   </a>
 </p>
 
 ## A full-featured download manager
 
-[![GitHub release](https://img.shields.io/github/v/release/agalwood/Motrix.svg)](https://github.com/agalwood/Motrix/releases) ![Build/release](https://github.com/agalwood/Motrix/workflows/Build/release/badge.svg) ![Total Downloads](https://img.shields.io/github/downloads/agalwood/Motrix/total.svg) ![Support Platforms](https://camo.githubusercontent.com/a50c47295f350646d08f2e1ccd797ceca3840e52/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f706c6174666f726d2d6d61634f5325323025374325323057696e646f77732532302537432532304c696e75782d6c69676874677265792e737667)
+[![GitHub release](https://img.shields.io/github/v/release/agalwood/Motrix.svg)](https://github.com/imfile-io/imfile-desktop/releases) ![Build/release](https://github.com/agalwood/Motrix/workflows/Build/release/badge.svg) ![Total Downloads](https://img.shields.io/github/downloads/agalwood/Motrix/total.svg) ![Support Platforms](https://camo.githubusercontent.com/a50c47295f350646d08f2e1ccd797ceca3840e52/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f706c6174666f726d2d6d61634f5325323025374325323057696e646f77732532302537432532304c696e75782d6c69676874677265792e737667)
 
 English | [简体中文](./README-CN.md)
 
-Motrix is a full-featured download manager that supports downloading HTTP, FTP, BitTorrent, Magnet, etc.
+imFile is a full-featured download manager that supports downloading HTTP, FTP, BitTorrent, Magnet, etc.
 
-Motrix has a clean and easy to use interface. I hope you will like it 👻.
+imFile has a clean and easy to use interface. I hope you will like it 👻.
 
-✈️ [Official Website](https://motrix.app) | 📖 [Manual](https://github.com/agalwood/Motrix/wiki)
+✈️ [Official Website](https://imfile.io/) | 📖 [Manual](https://github.com/imfile-io/imfile-desktop/wiki)
 
 ## 💽 Installation
 
-Download from [GitHub Releases](https://github.com/agalwood/Motrix/releases) and install it.
+Download from [GitHub Releases](https://github.com/imfile-io/imfile-desktop/releases) and install it.
 
 ### Windows
 
-It is recommended to install Motrix using the installation package (Motrix-Setup-x.y.z.exe) to ensure a complete experience, such as associating torrent files, capturing magnet links, etc.
+It is recommended to install imFile using the installation package (imFile-Setup-x.y.z.exe) to ensure a complete experience, such as associating torrent files, capturing magnet links, etc.
 
-If you use package management tools to manage applications on Windows, such as [Chocolatey](https://chocolatey.org), [scoop](https://github.com/lukesampson/scoop). You can use them to install Motrix.
+If you use package management tools to manage applications on Windows, such as [Chocolatey](https://chocolatey.org), [scoop](https://github.com/lukesampson/scoop). You can use them to install imFile.
 
 #### Chocolatey
 Thanks to [@Yato](https://github.com/iYato) for continuing to maintain the [Motrix Chocolatey](https://community.chocolatey.org/packages/motrix) package. To install motrix, run the following command from the `command line` or from `PowerShell`:
