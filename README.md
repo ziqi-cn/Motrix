@@ -43,6 +43,10 @@ It is recommended to install imFile using the installation package (imFile-Setup
 - 📟 Tray speed meter displays real-time speed (Mac only)
 - 🗑 Delete related files when removing tasks (optional)
 - 🌍 I18n, [View supported languages](#-internationalization).
+- Support the use of doh to solve the problem that some trackers are hijacked by dns
+- Support direct download hashes
+- Automatically save tasks, restart without losing tasks
+- Regular update and maintenance
 - 🛠 More features in development
 
 ## 🖥 User Interface
