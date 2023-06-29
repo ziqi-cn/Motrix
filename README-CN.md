@@ -101,14 +101,9 @@ yarn run build:applesilicon
 - [Vue](https://vuejs.org/) + [VueX](https://vuex.vuejs.org/) + [Element](https://element.eleme.io)
 - [Aria2](https://aria2.github.io/)
 
-
-## 🤝 参与共建 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
-
-如果你有兴趣参与共同开发，欢迎 FORK 和 PR。
-
 ## 🌍 国际化
 
-欢迎大家将 imFile 翻译成更多的语言版本 🧐，开工之前请先阅读一下 [翻译指南](./CONTRIBUTING-CN.md#-翻译指南)。
+欢迎大家将 imFile 翻译成更多的语言版本 🧐
 
 | Key   | Name                | Status       |
 |-------|:--------------------|:-------------|
