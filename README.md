@@ -47,7 +47,7 @@ It is recommended to install imFile using the installation package (imFile-Setup
 
 ## 🖥 User Interface
 
-![motrix-screenshot-task-en.png](https://cdn.nlark.com/yuque/0/2020/png/129147/1589782238501-e7b39166-da58-4152-ae34-65a061cafa48.png)
+![motrix-screenshot-task-en.png](https://raw.githubusercontent.com/imfile-io/imfile-desktop/master/screenshots/userInterface_img.png)
 
 ## ⌨️ Development
 
@@ -136,4 +136,4 @@ Translations into versions for other languages are welcome 🧐! Please read the
 
 ## 📜 License
 
-[MIT](https://opensource.org/licenses/MIT) Copyright (c) 2018-present Dr_rOot
+[MIT](https://opensource.org/licenses/MIT) Copyright (c) 2023-present imFile
