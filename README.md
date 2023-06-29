@@ -93,17 +93,8 @@ After building, the application will be found in the project's `release` directo
 - [Vue](https://vuejs.org/) + [VueX](https://vuex.vuejs.org/) + [Element](https://element.eleme.io)
 - [Aria2](https://aria2.github.io/)
 
-## ☑️ TODO
-
-Development Roadmap see: [Trello](https://trello.com/b/qNUzA0bv/motrix)
-
-## 🤝 Contribute [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
-
-If you are interested in participating in joint development, PR and Forks are welcome!
 
 ## 🌍 Internationalization
-
-Translations into versions for other languages are welcome 🧐! Please read the [translation guide](./CONTRIBUTING.md#-translation-guide) before starting translations.
 
 | Key   | Name                | Status       |
 |-------|:--------------------|:-------------|
