@@ -64,16 +64,14 @@
           "target": "dmg",
           "arch": [
             "x64",
-            "arm64",
-            "universal"
+            "arm64"
           ]
         },
         {
           "target": "zip",
           "arch": [
             "x64",
-            "arm64",
-            "universal"
+            "arm64"
           ]
         }
       ],
@@ -187,7 +185,7 @@
     "publish": [
       {
         "provider": "generic",
-        "url": "https://imfile-backend.s3.ap-northeast-1.amazonaws.com/update/"
+        "url": "https://dl.imfile.io/"
       },
       {
         "provider": "github"

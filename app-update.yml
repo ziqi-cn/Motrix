@@ -1,2 +1,2 @@
 provider: generic
-url: 'https://imfile-backend.s3.ap-northeast-1.amazonaws.com/update/'
+url: 'https://dl.imfile.io/'
