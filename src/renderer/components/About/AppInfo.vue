@@ -6,6 +6,8 @@
     </div>
     <div class="engine-info" v-if="!!engine">
       <h4>{{ $t('about.engine-version') }} {{engine.version}}</h4>
+      <h4>electron {{version_electron}}</h4>
+      <h4>chrome {{version_chrome}}</h4>
       <ul v-if="!isMas()">
         <li
           v-for="(feature, index) in engine.enabledFeatures"
@@ -30,6 +32,14 @@
       version: {
         type: String,
         default: ''
+      },
+      version_chrome:{
+        type: String,
+        default:  process.versions.chrome
+      },
+      version_electron:{
+        type: String,
+        default: process.versions.electron
       },
       engine: {
         type: Object,
