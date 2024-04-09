@@ -12,7 +12,7 @@
 
 [English](./README.md) | 简体中文
 
-我是个兴趣使然的桌面应用开发者🤓，利用搬砖之余开发了 imFile。
+[Motrix](https://github.com/agalwood/Motrix/) 已经很长时间没有更新，同时积累了大量issues，本项目基于[Motrix](https://github.com/agalwood/Motrix/) 的fork并长期维护更新。
 
 imFile 是一款全能的下载工具，支持下载 HTTP、FTP、BT、磁力链等资源。它的界面简洁易用，希望大家喜欢 👻。
 
@@ -34,7 +34,7 @@ imFile 是一款全能的下载工具，支持下载 HTTP、FTP、BT、磁力链
 - 📡 每天自动更新 Tracker 服务器列表
 - 🔌 UPnP & NAT-PMP 端口映射
 - 🎛 最高支持 10 个任务同时下载
-- 🚀 单任务最高支持 64 线程下载
+- 🚀 单任务最高支持 16 线程下载
 - 🚥 设置上传/下载限速
 - 🕶 模拟用户代理UA
 - 🔔 下载完成后通知
@@ -46,7 +46,7 @@ imFile 是一款全能的下载工具，支持下载 HTTP、FTP、BT、磁力链
 - 支持使用doh，解决部分trackers被dns劫持的问题
 - 支持直接下载哈希
 - 自动保存任务，重启不丢失任务
-- 定期更新维护
+- 定期更新维护，更新各种依赖和内核
 - 🛠 更多特性开发中
 
 ## 🖥 应用界面
