@@ -124,7 +124,7 @@ export default class ConfigManager {
           'bypass': EMPTY_STRING,
           'scope': PROXY_SCOPE_OPTIONS
         },
-        'resume-all-when-app-launched': false,
+        'resume-all-when-app-launched': true,
         'run-mode': APP_RUN_MODE.STANDARD,
         'show-progress-bar': true,
         'task-notification': true,
