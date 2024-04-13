@@ -181,6 +181,17 @@ yarn run build:applesilicon
 
 After building, the application will be found in the project's `release` directory.
 
+#### Build for LoongArch
+
+```bash
+export ELECTRON_MIRROR=http://ftp.loongnix.cn/electron/LoongArch/
+export electron_use_remote_checksums=1
+pnpm i
+pnpm run build:dir
+```
+
+
+
 ## 🛠 Technology Stack
 
 - [Electron](https://electronjs.org/)

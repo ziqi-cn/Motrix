@@ -186,6 +186,15 @@ yarn run build:applesilicon
 ```
 完成之后可以在项目的 `release` 目录看到编译打包好的应用文件
 
+#### 编译龙架构版本
+
+```bash
+export ELECTRON_MIRROR=http://ftp.loongnix.cn/electron/LoongArch/
+export electron_use_remote_checksums=1
+pnpm i
+pnpm run build:dir
+```
+
 ## 🛠 技术栈
 
 - [Electron](https://electronjs.org/)
