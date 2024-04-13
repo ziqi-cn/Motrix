@@ -9,7 +9,7 @@ node_modules/
 thumbs.db
 
 # npm package
-.npmrc
+# .npmrc
 npm-debug.log.*
 
 # Eslint Cache
