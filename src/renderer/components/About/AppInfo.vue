@@ -35,7 +35,7 @@
       },
       version_chrome: {
         type: String,
-        default:  process.versions.chrome
+        default: process.versions.chrome
       },
       version_electron: {
         type: String,
