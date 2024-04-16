@@ -131,6 +131,10 @@ After building, the application will be found in the project's `release` directo
 | zh-CN | 简体中文             | ✔️           |
 | zh-TW | 繁體中文             | ✔️ [@Yukaii](https://github.com/Yukaii) [@5idereal](https://github.com/5idereal) |
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=imfile-io/imfile-desktop&type=Timeline)](https://star-history.com/#imfile-io/imfile-desktop&Timeline)
+
 ## 📜 License
 
 [MIT](https://opensource.org/licenses/MIT) Copyright (c) 2023-present imFile

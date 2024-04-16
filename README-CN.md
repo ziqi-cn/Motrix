@@ -138,6 +138,10 @@ yarn run build:applesilicon
 | zh-CN | 简体中文             | ✔️           |
 | zh-TW | 繁體中文             | ✔️ [@Yukaii](https://github.com/Yukaii) [@5idereal](https://github.com/5idereal) |
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=imfile-io/imfile-desktop&type=Timeline)](https://star-history.com/#imfile-io/imfile-desktop&Timeline)
+
 ## 📜 开源许可
 
 基于 [MIT license](https://opensource.org/licenses/MIT) 许可进行开源。
