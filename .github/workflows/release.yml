@@ -30,17 +30,17 @@ jobs:
           node-version: 18
           cache: 'pnpm'
 
-      - name: Install Snapcraft
-        uses: samuelmeuli/action-snapcraft@v2
-        # Only install Snapcraft on Ubuntu
-        if: startsWith(matrix.os, 'ubuntu')
-        env:
-          # Snapcraft
-          SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.snapcraft_token }}
+      # - name: Install Snapcraft
+      #   uses: samuelmeuli/action-snapcraft@v2
+      #   # Only install Snapcraft on Ubuntu
+      #   if: startsWith(matrix.os, 'ubuntu')
+      #   env:
+      #     # Snapcraft
+      #     SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.snapcraft_token }}
 
-      - name: Test Snapcraft
-        if: startsWith(matrix.os, 'ubuntu')
-        run: snapcraft --help
+      # - name: Test Snapcraft
+      #   if: startsWith(matrix.os, 'ubuntu')
+      #   run: snapcraft --help
 
       - name: Build/release Electron app
         uses: chenjia404/action-electron-builder@v0.0.3
