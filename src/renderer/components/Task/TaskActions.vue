@@ -88,10 +88,10 @@
       }
     },
     computed: {
-    ...mapState('task', {
-      currentList: state => state.currentList,
-      selectedGidListCount: state => state.selectedGidList.length
-    })
+      ...mapState('task', {
+        currentList: state => state.currentList,
+        selectedGidListCount: state => state.selectedGidList.length
+      })
     },
     filters: {
       bytesToSize,
