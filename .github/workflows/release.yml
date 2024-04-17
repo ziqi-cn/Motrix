@@ -43,7 +43,7 @@ jobs:
       #   run: snapcraft --help
 
       - name: Build/release Electron app
-        uses: chenjia404/action-electron-builder@v0.0.3
+        uses: chenjia404/action-electron-builder@v0.0.4
         with:
           build_script_name: 'build:github'
           # GitHub token, automatically provided to the action
