@@ -1310,9 +1310,9 @@
     plist "^3.0.5"
 
 "@electron/osx-sign@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@electron/osx-sign/-/osx-sign-1.0.4.tgz#8e91442846471636ca0469426a82b253b9170151"
-  integrity sha512-xfhdEcIOfAZg7scZ9RQPya1G1lWo8/zMCwUXAulq0SfY7ONIW+b9qGyKdMyuMctNYwllrIS+vmxfijSfjeh97g==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@electron/osx-sign/-/osx-sign-1.1.0.tgz#461ee8cbec833768ced5a99ed61b0f6fdce78852"
+  integrity sha512-9xxNAyTu2YEAfn2TOQXC5fcTZ9hxVT/zAgWOONpOvxivv5rU97RldGbJrxz+OBKXGAiQRJUYOY07mJI++S/iYw==
   dependencies:
     compare-version "^0.1.2"
     debug "^4.3.4"
@@ -1997,6 +1997,11 @@
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/@webpack-cli/serve/-/serve-2.0.4.tgz#3982ee6f8b42845437fc4d391e93ac5d9da52f0f"
   integrity sha512-0xRgjgDLdz6G7+vvDLlaRpFatJaJ69uTalZLRSMX5B3VUrDmXcrVA3+6fXXQgmYz7bY9AAgs348XQdmtLsK41A==
+
+"@xmldom/xmldom@^0.8.8":
+  version "0.8.10"
+  resolved "https://registry.yarnpkg.com/@xmldom/xmldom/-/xmldom-0.8.10.tgz#a1337ca426aa61cef9fe15b5b28e340a72f6fa99"
+  integrity sha512-2WALfTl4xo2SkGCYRt6rDTFfk9R1czmBvUQy12gK2KuRKIpWEhcbbzy8EZXtz/jkRqHX8bFEc6FC1HjX4TUWYw==
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
@@ -5997,11 +6002,20 @@ pkg-up@^3.1.0:
   dependencies:
     find-up "^3.0.0"
 
-plist@^3.0.4, plist@^3.0.5:
+plist@^3.0.4:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/plist/-/plist-3.0.6.tgz#7cfb68a856a7834bca6dbfe3218eb9c7740145d3"
   integrity sha512-WiIVYyrp8TD4w8yCvyeIr+lkmrGRd5u0VbRnU+tP/aRLxP/YadJUYOMZJ/6hIa3oUyVCsycXvtNRgd5XBJIbiA==
   dependencies:
+    base64-js "^1.5.1"
+    xmlbuilder "^15.1.1"
+
+plist@^3.0.5:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/plist/-/plist-3.1.0.tgz#797a516a93e62f5bde55e0b9cc9c967f860893c9"
+  integrity sha512-uysumyrvkUX0rX/dEVqt8gC3sTBzd4zoWfLeS29nb53imdaXVvLINYXTI2GNqzaMuvacNx4uJQ8+b3zXR0pkgQ==
+  dependencies:
+    "@xmldom/xmldom" "^0.8.8"
     base64-js "^1.5.1"
     xmlbuilder "^15.1.1"
 
