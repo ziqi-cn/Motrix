@@ -179,7 +179,7 @@ importers:
         version: 12.6.0(sass@1.62.1)(webpack@5.82.1(webpack-cli@5.1.1))
       style-loader:
         specifier: ^3.3.2
-        version: 3.3.2(webpack@5.82.1(webpack-cli@5.1.1))
+        version: 3.3.4(webpack@5.82.1(webpack-cli@5.1.1))
       terser-webpack-plugin:
         specifier: ^5.3.8
         version: 5.3.8(webpack@5.82.1(webpack-cli@5.1.1))
@@ -4541,8 +4541,8 @@ packages:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
 
-  style-loader@3.3.2:
-    resolution: {integrity: sha512-RHs/vcrKdQK8wZliteNK4NKzxvLBzpuHMqYmUVWeKa6MkaIQ97ZTOS0b+zapZhy6GcrgWnvWYCMHRirC3FsUmw==}
+  style-loader@3.3.4:
+    resolution: {integrity: sha512-0WqXzrsMTyb8yjZJHDqwmnwRJvhALK9LfRtRc6B4UTWe8AijYLZYZ9thuJTZc2VfQWINADW/j+LiJnfy2RoC1w==}
     engines: {node: '>= 12.13.0'}
     peerDependencies:
       webpack: ^5.0.0
@@ -9864,7 +9864,7 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
-  style-loader@3.3.2(webpack@5.82.1(webpack-cli@5.1.1)):
+  style-loader@3.3.4(webpack@5.82.1(webpack-cli@5.1.1)):
     dependencies:
       webpack: 5.82.1(webpack-cli@5.1.1)
 
