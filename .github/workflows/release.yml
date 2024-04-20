@@ -5,6 +5,7 @@ on: push
 jobs:
   release-linux:
     runs-on: ubuntu-latest
+    environment: release
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v2
@@ -36,6 +37,7 @@ jobs:
 
   release-macos:
     runs-on: macos-latest
+    environment: release
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v2
@@ -62,6 +64,7 @@ jobs:
 
   release-windows:
     runs-on: windows-latest
+    environment: release
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v2
