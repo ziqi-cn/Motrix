@@ -47,7 +47,7 @@ importers:
         version: 1.1.0
       '@electron/remote':
         specifier: ^2.1.2
-        version: 2.1.2(electron@30.0.0)
+        version: 2.1.2(electron@30.0.1)
       '@motrix/multispinner':
         specifier: ^0.2.4
         version: 0.2.4
@@ -101,7 +101,7 @@ importers:
         version: 6.1.1
       electron:
         specifier: ^30.0.0
-        version: 30.0.0
+        version: 30.0.1
       electron-builder:
         specifier: ^24.13.3
         version: 24.13.3(electron-builder-squirrel-windows@24.13.3(dmg-builder@24.13.3))
@@ -1168,9 +1168,6 @@ packages:
 
   '@types/node@20.12.7':
     resolution: {integrity: sha512-wq0cICSkRLVaf3UGLMGItu/PtdY7oaXaI/RVU+xliKVOtRna3PRY57ZDfztpDL0n11vfymMUnXv8QwYCO7L1wg==}
-
-  '@types/node@20.3.2':
-    resolution: {integrity: sha512-vOBLVQeCQfIcF/2Y7eKFTqrMnizK5lRNQ7ykML/5RuwVXVWxYkgwS7xbt4B6fKCUPgbSL5FSsjHQpaGQP/dQmw==}
 
   '@types/plist@3.0.5':
     resolution: {integrity: sha512-E6OCaRmAe4WDmWNsL/9RMqdkkzDCY1etutkflWk4c+AcjDU07Pcz1fQwTX0TQz+Pxqn9i4L1TU3UFpjnrcDgxA==}
@@ -2345,8 +2342,8 @@ packages:
   electron-updater@6.1.8:
     resolution: {integrity: sha512-hhOTfaFAd6wRHAfUaBhnAOYc+ymSGCWJLtFkw4xJqOvtpHmIdNHnXDV9m1MHC+A6q08Abx4Ykgyz/R5DGKNAMQ==}
 
-  electron@30.0.0:
-    resolution: {integrity: sha512-GRwKphq/TUhSlb44OwSckXKl50f5OR/pm9MvF3rBLyqcxwfu7L11xejrZ0hDea1eKyCkzGd4B+cIqaQiDguPEA==}
+  electron@30.0.1:
+    resolution: {integrity: sha512-iwxkI/n2wBd29NH7TH0ZY8aWGzCoKpzJz+D10u7aGSJi1TV6d4MSM3rWyKvT/UkAHkTKOEgYfUyCa2vWQm8L0g==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -5974,9 +5971,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@electron/remote@2.1.2(electron@30.0.0)':
+  '@electron/remote@2.1.2(electron@30.0.1)':
     dependencies:
-      electron: 30.0.0
+      electron: 30.0.1
 
   '@electron/universal@1.5.1':
     dependencies:
@@ -6041,7 +6038,7 @@ snapshots:
       '@jest/schemas': 29.4.3
       '@types/istanbul-lib-coverage': 2.0.4
       '@types/istanbul-reports': 3.0.1
-      '@types/node': 20.3.2
+      '@types/node': 20.12.7
       '@types/yargs': 17.0.24
       chalk: 4.1.2
 
@@ -6257,8 +6254,6 @@ snapshots:
   '@types/node@20.12.7':
     dependencies:
       undici-types: 5.26.5
-
-  '@types/node@20.3.2': {}
 
   '@types/plist@3.0.5':
     dependencies:
@@ -7552,7 +7547,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  electron@30.0.0:
+  electron@30.0.1:
     dependencies:
       '@electron/get': 2.0.3
       '@types/node': 20.12.7
@@ -8625,7 +8620,7 @@ snapshots:
   jest-util@29.5.0:
     dependencies:
       '@jest/types': 29.5.0
-      '@types/node': 20.3.2
+      '@types/node': 20.12.7
       chalk: 4.1.2
       ci-info: 3.9.0
       graceful-fs: 4.2.11
@@ -8648,7 +8643,7 @@ snapshots:
 
   jest-worker@29.5.0:
     dependencies:
-      '@types/node': 20.3.2
+      '@types/node': 20.12.7
       jest-util: 29.5.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
