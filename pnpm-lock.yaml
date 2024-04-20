@@ -91,8 +91,8 @@ importers:
         specifier: ^7.0.3
         version: 7.0.3
       css-loader:
-        specifier: ^6.7.3
-        version: 6.11.0(webpack@5.91.0(webpack-cli@5.1.4))
+        specifier: ^7.0.0
+        version: 7.1.1(webpack@5.91.0(webpack-cli@5.1.4))
       css-minimizer-webpack-plugin:
         specifier: ^5.0.0
         version: 5.0.1(webpack@5.91.0(webpack-cli@5.1.4))
@@ -194,7 +194,7 @@ importers:
         version: 1.0.6
       vue-loader:
         specifier: ^15.10.1
-        version: 15.11.1(@vue/compiler-sfc@2.7.16)(css-loader@6.11.0(webpack@5.91.0(webpack-cli@5.1.4)))(ejs@3.1.9)(lodash@4.17.21)(vue-template-compiler@2.7.16)(webpack@5.91.0(webpack-cli@5.1.4))
+        version: 15.11.1(@vue/compiler-sfc@2.7.16)(css-loader@7.1.1(webpack@5.91.0(webpack-cli@5.1.4)))(ejs@3.1.9)(lodash@4.17.21)(vue-template-compiler@2.7.16)(webpack@5.91.0(webpack-cli@5.1.4))
       vue-router:
         specifier: ^3.6.5
         version: 3.6.5(vue@2.7.16)
@@ -2010,12 +2010,12 @@ packages:
     peerDependencies:
       postcss: ^8.0.9
 
-  css-loader@6.11.0:
-    resolution: {integrity: sha512-CTJ+AEQJjq5NzLga5pE39qdiSV56F8ywCIsqNIRF0r7BDgWsN25aazToqAFg7ZrtA/U016xudB3ffgweORxX7g==}
-    engines: {node: '>= 12.13.0'}
+  css-loader@7.1.1:
+    resolution: {integrity: sha512-OxIR5P2mjO1PSXk44bWuQ8XtMK4dpEqpIyERCx3ewOo3I8EmbcxMPUc5ScLtQfgXtOojoMv57So4V/C02HQLsw==}
+    engines: {node: '>= 18.12.0'}
     peerDependencies:
       '@rspack/core': 0.x || 1.x
-      webpack: ^5.0.0
+      webpack: ^5.27.0
     peerDependenciesMeta:
       '@rspack/core':
         optional: true
@@ -7115,7 +7115,7 @@ snapshots:
     dependencies:
       postcss: 8.4.38
 
-  css-loader@6.11.0(webpack@5.91.0(webpack-cli@5.1.4)):
+  css-loader@7.1.1(webpack@5.91.0(webpack-cli@5.1.4)):
     dependencies:
       icss-utils: 5.1.0(postcss@8.4.38)
       postcss: 8.4.38
@@ -10075,10 +10075,10 @@ snapshots:
 
   vue-hot-reload-api@2.3.4: {}
 
-  vue-loader@15.11.1(@vue/compiler-sfc@2.7.16)(css-loader@6.11.0(webpack@5.91.0(webpack-cli@5.1.4)))(ejs@3.1.9)(lodash@4.17.21)(vue-template-compiler@2.7.16)(webpack@5.91.0(webpack-cli@5.1.4)):
+  vue-loader@15.11.1(@vue/compiler-sfc@2.7.16)(css-loader@7.1.1(webpack@5.91.0(webpack-cli@5.1.4)))(ejs@3.1.9)(lodash@4.17.21)(vue-template-compiler@2.7.16)(webpack@5.91.0(webpack-cli@5.1.4)):
     dependencies:
       '@vue/component-compiler-utils': 3.3.0(ejs@3.1.9)(lodash@4.17.21)
-      css-loader: 6.11.0(webpack@5.91.0(webpack-cli@5.1.4))
+      css-loader: 7.1.1(webpack@5.91.0(webpack-cli@5.1.4))
       hash-sum: 1.0.2
       loader-utils: 1.4.2
       vue-hot-reload-api: 2.3.4
