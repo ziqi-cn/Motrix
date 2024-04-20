@@ -7,8 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: release
     env:
-      gh_token: ${{ secrets.github_token }}
-      github_token: ${{ secrets.github_token }}
+      gh_token: ${{ secrets.gh_token }}
+      github_token: ${{ secrets.gh_token }}
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v2
@@ -46,8 +46,8 @@ jobs:
     runs-on: macos-latest
     environment: release
     env:
-      gh_token: ${{ secrets.github_token }}
-      github_token: ${{ secrets.github_token }}
+      gh_token: ${{ secrets.gh_token }}
+      github_token: ${{ secrets.gh_token }}
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v2
@@ -80,8 +80,8 @@ jobs:
     runs-on: windows-latest
     environment: release
     env:
-      gh_token: ${{ secrets.github_token }}
-      github_token: ${{ secrets.github_token }}
+      gh_token: ${{ secrets.gh_token }}
+      github_token: ${{ secrets.gh_token }}
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v2
