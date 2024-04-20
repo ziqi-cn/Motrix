@@ -20,7 +20,6 @@ jobs:
         with:
           node-version: 18
       - run: yarn install --network-timeout 100000
-      - run: yarn run build
 
       - name: Build/release Electron app
         uses: samuelmeuli/action-electron-builder@v1
@@ -47,7 +46,6 @@ jobs:
         with:
           node-version: 18
       - run: yarn install --network-timeout 100000
-      - run: yarn run build
 
       - name: Build/release Electron app
         uses: samuelmeuli/action-electron-builder@v1
@@ -76,13 +74,13 @@ jobs:
         with:
           node-version: 18
       - run: yarn install --network-timeout 100000
-      - run: yarn run build
 
       - name: Build/release Electron app
         uses: samuelmeuli/action-electron-builder@v1
         with:
           # GitHub token, automatically provided to the action
           # (No need to define this secret in the repo settings)
+          GH_TOKEN: ${{ secrets.github_token }}
           github_token: ${{ secrets.github_token }}
 
           # If the commit is tagged with a version (e.g. "v1.0.0"),
