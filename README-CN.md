@@ -26,6 +26,8 @@ imFile 是一款全能的下载工具，支持下载 HTTP、FTP、BT、磁力链
 
 建议使用安装包（imFile-Setup-x.y.z.exe）安装 imFile 以确保完整的体验，例如关联 torrent 文件，捕获磁力链等。
 
+注意win7操作系统需要下载文件名带win7的版本。
+
 ## ✨ 特性
 
 - 🕹 简洁明了的图形操作界面
