@@ -15,7 +15,7 @@
     "url": "https://github.com/imfile-io/imfile-desktop.git"
   },
   "scripts": {
-    "release": "npm run build --publish onTagOrDraft",
+    "release": "node .electron-vue/build.js && electron-builder --publish onTagOrDraft",
     "build": "node .electron-vue/build.js && electron-builder",
     "build:win7": "pnpm up electron@22 && node .electron-vue/build.js && electron-builder --win --config.directories.output=release/win32/7",
     "build:win10": "pnpm up electron@30 && node .electron-vue/build.js && electron-builder --win --config.directories.output=release/win32/10",
