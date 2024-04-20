@@ -11,7 +11,7 @@ jobs:
       github_token: ${{ secrets.github_token }}
     steps:
       - name: Check out Git repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
 
       - name: Cache node modules
@@ -50,7 +50,7 @@ jobs:
       github_token: ${{ secrets.github_token }}
     steps:
       - name: Check out Git repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
 
       - name: Cache node modules
@@ -84,7 +84,7 @@ jobs:
       github_token: ${{ secrets.github_token }}
     steps:
       - name: Check out Git repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
