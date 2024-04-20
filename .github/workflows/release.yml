@@ -40,7 +40,7 @@ jobs:
           cache: 'npm'
 
       - run: yarn install --network-timeout 100000
-      - run: yarn run build
+      - run: yarn run release
 
   release-macos:
     runs-on: macos-latest
@@ -74,7 +74,7 @@ jobs:
           cache: 'npm'
 
       - run: yarn install --network-timeout 100000
-      - run: yarn run build
+      - run: yarn run release
 
   release-windows:
     runs-on: windows-latest
@@ -110,4 +110,4 @@ jobs:
           cache: 'npm'
 
       - run: yarn install --network-timeout 100000
-      - run: yarn run build
+      - run: yarn run release
