@@ -32,10 +32,11 @@ jobs:
 
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@v1
-        with:
-          node-version: 18
+        env:
           gh_token: ${{ secrets.github_token }}
           github_token: ${{ secrets.github_token }}
+        with:
+          node-version: 18
 
       - run: yarn install --network-timeout 100000
       - run: yarn run build
@@ -64,10 +65,11 @@ jobs:
 
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@v1
-        with:
-          node-version: 18
+        env:
           gh_token: ${{ secrets.github_token }}
           github_token: ${{ secrets.github_token }}
+        with:
+          node-version: 18
 
       - run: yarn install --network-timeout 100000
       - run: yarn run build
@@ -98,10 +100,11 @@ jobs:
 
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@v1
-        with:
-          node-version: 18
+        env:
           gh_token: ${{ secrets.github_token }}
           github_token: ${{ secrets.github_token }}
+        with:
+          node-version: 18
 
       - run: yarn install --network-timeout 100000
       - run: yarn run build
