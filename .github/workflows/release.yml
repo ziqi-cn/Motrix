@@ -31,9 +31,10 @@ jobs:
           sudo apt install --install-recommends rpm -y 1>&2
 
       - name: Install Node.js, NPM and Yarn
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: 18
+          cache: 'npm'
 
       - run: yarn install --network-timeout 100000
       - run: yarn run build
@@ -64,9 +65,10 @@ jobs:
             ${{ runner.os }}-
 
       - name: Install Node.js, NPM and Yarn
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: 18
+          cache: 'npm'
 
       - run: yarn install --network-timeout 100000
       - run: yarn run build
@@ -99,9 +101,10 @@ jobs:
             ${{ runner.os }}-
 
       - name: Install Node.js, NPM and Yarn
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: 18
+          cache: 'npm'
 
       - run: yarn install --network-timeout 100000
       - run: yarn run build
