@@ -10,7 +10,7 @@ importers:
     dependencies:
       node-fetch:
         specifier: ^2.6.1
-        version: 2.6.1
+        version: 2.7.0
       ws:
         specifier: ^8.13.0
         version: 8.13.0
@@ -135,6 +135,9 @@ importers:
       eslint-plugin-n:
         specifier: ^14.0.0
         version: 14.0.0(eslint@7.32.0)
+      eslint-plugin-node:
+        specifier: ^11.1.0
+        version: 11.1.0(eslint@7.32.0)
       eslint-plugin-promise:
         specifier: ^6.1.1
         version: 6.1.1(eslint@7.32.0)
@@ -3642,12 +3645,8 @@ packages:
   node-addon-api@1.7.2:
     resolution: {integrity: sha512-ibPK3iA+vaY1eEjESkQkM0BbCqFOaZMiXRTtdB0u7b4djtY6JnsjvPdUHVMg6xQt3B8fpTTWHI9A+ADjM9frzg==}
 
-  node-fetch@2.6.1:
-    resolution: {integrity: sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==}
-    engines: {node: 4.x || >=6.0.0}
-
-  node-fetch@2.6.11:
-    resolution: {integrity: sha512-4I6pdBY1EthSqDmJkiNk3JIT8cswwR9nfeW/cPdUagJYEQG7R95WRH74wpz7ma8Gh/9dI9FP+OU+0E4FvtA55w==}
+  node-fetch@2.7.0:
+    resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
     engines: {node: 4.x || >=6.0.0}
     peerDependencies:
       encoding: ^0.1.0
@@ -6110,7 +6109,7 @@ snapshots:
       async: 3.2.4
       debug: 4.3.4
       default-gateway: 6.0.3
-      node-fetch: 2.6.11
+      node-fetch: 2.7.0
       unordered-array-remove: 1.0.2
       xml2js: 0.5.0
     transitivePeerDependencies:
@@ -8996,9 +8995,7 @@ snapshots:
   node-addon-api@1.7.2:
     optional: true
 
-  node-fetch@2.6.1: {}
-
-  node-fetch@2.6.11:
+  node-fetch@2.7.0:
     dependencies:
       whatwg-url: 5.0.0
 
