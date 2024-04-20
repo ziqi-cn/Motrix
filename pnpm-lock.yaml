@@ -194,7 +194,7 @@ importers:
         version: 1.0.6
       vue-loader:
         specifier: ^15.10.1
-        version: 15.10.1(@vue/compiler-sfc@2.7.16)(css-loader@6.11.0(webpack@5.82.1(webpack-cli@5.1.4)))(ejs@3.1.9)(lodash@4.17.21)(vue-template-compiler@2.7.16)(webpack@5.82.1(webpack-cli@5.1.4))
+        version: 15.11.1(@vue/compiler-sfc@2.7.16)(css-loader@6.11.0(webpack@5.82.1(webpack-cli@5.1.4)))(ejs@3.1.9)(lodash@4.17.21)(vue-template-compiler@2.7.16)(webpack@5.82.1(webpack-cli@5.1.4))
       vue-router:
         specifier: ^3.6.5
         version: 3.6.5(vue@2.7.16)
@@ -4818,18 +4818,21 @@ packages:
   vue-hot-reload-api@2.3.4:
     resolution: {integrity: sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==}
 
-  vue-loader@15.10.1:
-    resolution: {integrity: sha512-SaPHK1A01VrNthlix6h1hq4uJu7S/z0kdLUb6klubo738NeQoLbS6V9/d8Pv19tU0XdQKju3D1HSKuI8wJ5wMA==}
+  vue-loader@15.11.1:
+    resolution: {integrity: sha512-0iw4VchYLePqJfJu9s62ACWUXeSqM30SQqlIftbYWM3C+jpPcEHKSPUZBLjSF9au4HTHQ/naF6OGnO3Q/qGR3Q==}
     peerDependencies:
       '@vue/compiler-sfc': ^3.0.8
       cache-loader: '*'
       css-loader: '*'
+      prettier: '*'
       vue-template-compiler: '*'
       webpack: ^3.0.0 || ^4.1.0 || ^5.0.0-0
     peerDependenciesMeta:
       '@vue/compiler-sfc':
         optional: true
       cache-loader:
+        optional: true
+      prettier:
         optional: true
       vue-template-compiler:
         optional: true
@@ -10168,7 +10171,7 @@ snapshots:
 
   vue-hot-reload-api@2.3.4: {}
 
-  vue-loader@15.10.1(@vue/compiler-sfc@2.7.16)(css-loader@6.11.0(webpack@5.82.1(webpack-cli@5.1.4)))(ejs@3.1.9)(lodash@4.17.21)(vue-template-compiler@2.7.16)(webpack@5.82.1(webpack-cli@5.1.4)):
+  vue-loader@15.11.1(@vue/compiler-sfc@2.7.16)(css-loader@6.11.0(webpack@5.82.1(webpack-cli@5.1.4)))(ejs@3.1.9)(lodash@4.17.21)(vue-template-compiler@2.7.16)(webpack@5.82.1(webpack-cli@5.1.4)):
     dependencies:
       '@vue/component-compiler-utils': 3.3.0(ejs@3.1.9)(lodash@4.17.21)
       css-loader: 6.11.0(webpack@5.82.1(webpack-cli@5.1.4))
