@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 18
       - run: yarn install --network-timeout 100000
-      - run: yarn prod
+      - run: yarn run build
 
       - name: Build/release Electron app
         uses: samuelmeuli/action-electron-builder@v1
@@ -45,7 +45,7 @@ jobs:
         with:
           node-version: 18
       - run: yarn install --network-timeout 100000
-      - run: yarn prod
+      - run: yarn run build
 
       - name: Build/release Electron app
         uses: samuelmeuli/action-electron-builder@v1
@@ -71,7 +71,7 @@ jobs:
         with:
           node-version: 18
       - run: yarn install --network-timeout 100000
-      - run: yarn prod
+      - run: yarn run build
 
       - name: Build/release Electron app
         uses: samuelmeuli/action-electron-builder@v1
