@@ -44,10 +44,12 @@ jobs:
 
   release-macos:
     runs-on: macos-latest
+    permissions:
+      contents: write
     environment: release
     env:
-      gh_token: ${{ secrets.gh_token }}
-      github_token: ${{ secrets.gh_token }}
+      gh_token: ${{ secrets.GITHUB_TOKEN }}
+      github_token: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v4
