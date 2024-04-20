@@ -224,7 +224,7 @@ importers:
         version: 4.15.2(webpack-cli@5.1.4)(webpack@5.91.0)
       webpack-hot-middleware:
         specifier: ^2.25.3
-        version: 2.25.3
+        version: 2.26.1
       webpack-merge:
         specifier: ^5.8.0
         version: 5.8.0
@@ -2923,9 +2923,6 @@ packages:
   hpack.js@2.1.6:
     resolution: {integrity: sha512-zJxVehUdMGIKsRaNt7apO2Gqp0BdqW5yaiGHXXmbpvxgBYVZnAql+BJb4RO5ad2MgpbZKn5G6nMnegrH1FcNYQ==}
 
-  html-entities@2.4.0:
-    resolution: {integrity: sha512-igBTJcNNNhvZFRtm8uA6xMY6xYleeDwn3PeBCkDz7tHttv4F2hsDI2aPgNERWzvRcNYHNT3ymRaQzllmXj4YsQ==}
-
   html-entities@2.5.2:
     resolution: {integrity: sha512-K//PSRMQk4FZ78Kyau+mZurHn3FH0Vwr+H36eE0rPbeYkRRi9YxceYPhuN60UwWorxyKHhqoAJl2OFKa4BVtaA==}
 
@@ -4887,8 +4884,8 @@ packages:
       webpack-cli:
         optional: true
 
-  webpack-hot-middleware@2.25.3:
-    resolution: {integrity: sha512-IK/0WAHs7MTu1tzLTjio73LjS3Ov+VvBKQmE8WPlJutgG5zT6Urgq/BbAdRrHTRpyzK0dvAvFh1Qg98akxgZpA==}
+  webpack-hot-middleware@2.26.1:
+    resolution: {integrity: sha512-khZGfAeJx6I8K9zKohEWWYN6KDlVw2DHownoe+6Vtwj1LP9WFgegXnVMSkZ/dBEBtXFwrkkydsaPFlB7f8wU2A==}
 
   webpack-merge@5.8.0:
     resolution: {integrity: sha512-/SaI7xY0831XwP6kzuwhKWVKDP9t1QY1h65lAFLbZqMPIuYcD9QAW4u9STIbU9kaJbPBB/geU/gLr1wDjOhQ+Q==}
@@ -8298,8 +8295,6 @@ snapshots:
       readable-stream: 2.3.8
       wbuf: 1.7.3
 
-  html-entities@2.4.0: {}
-
   html-entities@2.5.2: {}
 
   html-minifier-terser@6.1.0:
@@ -10299,10 +10294,10 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  webpack-hot-middleware@2.25.3:
+  webpack-hot-middleware@2.26.1:
     dependencies:
       ansi-html-community: 0.0.8
-      html-entities: 2.4.0
+      html-entities: 2.5.2
       strip-ansi: 6.0.1
 
   webpack-merge@5.8.0:
