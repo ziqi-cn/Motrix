@@ -6,6 +6,9 @@ jobs:
   release-linux:
     runs-on: ubuntu-latest
     environment: release
+    env:
+      gh_token: ${{ secrets.github_token }}
+      github_token: ${{ secrets.github_token }}
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v2
