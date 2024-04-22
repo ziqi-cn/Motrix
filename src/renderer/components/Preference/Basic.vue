@@ -28,13 +28,13 @@
           :label="`${$t('preferences.appearance')}: `"
           :label-width="formLabelWidth"
         >
-          <!-- <el-col class="form-item-sub" :span="24">
+          <el-col class="form-item-sub" :span="24">
             <mo-theme-switcher
               v-model="form.theme"
               @change="handleThemeChange"
               ref="themeSwitcher"
             />
-          </el-col> -->
+          </el-col>
           <el-col v-if="showHideAppMenuOption" class="form-item-sub" :span="16">
             <el-checkbox v-model="form.hideAppMenu">
               {{ $t('preferences.hide-app-menu') }}
