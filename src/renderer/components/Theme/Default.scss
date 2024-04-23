@@ -134,6 +134,29 @@ iframe {
   }
 }
 
+.el-form-item__content{
+  .el-input__inner{
+    background-color: $--background-color-gray !important;
+    border: none !important;
+  }
+  .el-input-group__append{
+    background-color: $--background-color-gray !important;
+    border: none !important;
+  }
+  .el-button.select-directory.el-button--default.el-button--mini{
+    background-color: $--background-color-gray !important;
+  }
+  .el-input-number__decrease.is-disabled{
+    display: none !important;
+  }
+  .el-input-number__increase{
+    display: none !important;
+  }
+  .el-input-number__decrease{
+    display: none !important;
+  }
+}
+
 .el-drawer__container {
   outline: none;
 }

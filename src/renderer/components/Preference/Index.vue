@@ -92,7 +92,6 @@
   bottom: 0;
   left: auto;
   z-index: 10;
-  background-color: $--panel-background !important;
   width: -webkit-fill-available;
   box-sizing: border-box;
   padding-left: 300px !important;

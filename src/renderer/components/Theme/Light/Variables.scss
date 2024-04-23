@@ -32,13 +32,14 @@ $--main-background: $--color-white !default;
 
 /* Panel
 -------------------------- */
-$--panel-background: #131517 !default;
+$--panel-background: $--color-white !default;
 $--panel-title-color: #5B5B5B !default;
 $--panel-border-color: rgba(0, 0, 0, 0.1) !default;
 
 /* Form Actions
 -------------------------- */
 $--form-actions-background: $--color-white !default;
+$--background-color-gray: #F5F7FA  !default;
 
 /* Task
 -------------------------- */
