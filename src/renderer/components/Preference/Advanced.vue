@@ -834,9 +834,6 @@
 
 .bt-tracker {
   position: relative;
-  // .sync-tracker{
-  //   background-color: $--background-color-gray;
-  // }
   .el-textarea__inner{
     background-color: $--background-color-gray;
     border-color: $--background-color-gray;
@@ -887,5 +884,48 @@
 
 .ua-group {
   margin-top: 8px;
+}
+.theme-dark{
+  .bt-tracker {
+    .el-textarea__inner{
+      background-color: $--background-color-gray;
+      border-color: $--background-color-gray;
+    }
+    .sync-tracker-btn {
+      background-color: $--background-color-gray;
+      border-color: $--background-color-gray;
+    }
+    .track-source {
+      .el-select__tags {
+        .el-tag.el-tag--info.el-tag--mini.el-tag--light{
+          background: #282828;
+        }
+        .el-tag__close.el-icon-close{
+          color: #131517;
+          background: #5B5B5B;
+          :hover{
+            background: #343434;
+          }
+        }
+      }
+    }
+  }
+  .el-form-item__content{
+    .el-textarea__inner{
+      background-color: $--background-color-gray;
+      border-color: $--background-color-gray;
+    }
+    .el-button.el-button--default.el-button--mini{
+      background-color: $--dk--background-color-gray;
+      border-color: $--dk--background-color-gray;
+    }
+  }
+  .form-actions{
+    .btn_discard{
+      background: #282828;
+      color: #cbcbcb;
+      border-color: #282828;
+    }
+  }
 }
 </style>
