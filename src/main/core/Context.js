@@ -21,8 +21,8 @@ export default class Context {
   init () {
     // The key of Context cannot be the same as that of userConfig and systemConfig.
     this.context = {
-      platform: platform,
-      arch: arch,
+      platform,
+      arch,
       'log-path': this.getLogPath(),
       'session-path': getSessionPath(),
       'engine-path': getEnginePath(platform, arch),
