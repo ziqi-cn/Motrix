@@ -199,7 +199,7 @@
   text-align: right;
   direction: rtl;
   color: #fff;
-  background-color: $--task-item-background;
+  background-color: $--task-item-action-color;
   border-radius: 14px;
   transition: $--all-transition;
   &> .task-item-action {
@@ -211,6 +211,12 @@
     i {
       display: inline-block;
     }
+  }
+}
+.theme-dark{
+  .task-item-actions {
+    color: #cbcbcb;
+    background-color: $--task-item-background;
   }
 }
 </style>

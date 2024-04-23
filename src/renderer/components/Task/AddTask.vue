@@ -420,7 +420,7 @@
 
   .el-textarea__inner{
     color: #cbcbcb !important;
-    background: $--background-color-gray !important;
+    /* background: $--background-color-gray !important; */
     border: 4px !important;
     border-color: $--background-color-gray !important;
   }

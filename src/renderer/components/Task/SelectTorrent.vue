@@ -151,17 +151,12 @@
   .el-upload, .el-upload-dragger {
     width: 100%;
     border: 4px;
-    background: $--background-color-gray;
   }
   .el-upload-dragger {
     border-radius: 4px;
     padding: 24px;
     height: auto;
   }
-  // .upload-inbox-icon {
-  //   display: inline-block;
-  //   margin-bottom: 12px;
-  // }
   .torrent-name {
     margin-top: 4px;
     font-size: $--font-size-small;
