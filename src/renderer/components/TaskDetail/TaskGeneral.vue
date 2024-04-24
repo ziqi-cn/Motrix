@@ -206,5 +206,26 @@
     padding: 0 !important;
   }
 }
-
+.theme-dark {
+  .mo-task-general{
+    .el-form-item__label{
+      color: #CBCBCB;
+    }
+    .form-static-value{
+      color: #CBCBCB;
+    }
+    .el-input__inner::placeholder{
+      color: $--color-text-primary !important;
+    }
+    .el-input__inner{
+      color: #cbcbcb !important;
+      background: $--dk--background-color-gray !important;
+      border-color: $--dk--background-color-gray !important;
+    }
+    .el-input-group__append{
+      border-color: $--dk--background-color-gray !important;
+      background: $--dk--background-color-gray !important;
+    }
+  }
+}
 </style>
