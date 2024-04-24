@@ -479,4 +479,24 @@
     }
   }
 }
+.theme-dark {
+  .el-dialog.add-task-dialog {
+    background-color: $--dk-panel-background;
+    .el-input__inner{
+      color: #cbcbcb !important;
+      background: $--dk--background-color-gray !important;
+      border-color: $--dk--background-color-gray !important;
+    }
+    .el-input-group__append{
+      border-color: $--dk--background-color-gray !important;
+      background: $--dk--background-color-gray !important;
+    }
+    .el-button.select-directory.el-button--default.el-button--mini{
+      background: $--dk--background-color-gray !important;
+    }
+    .el-dialog__footer {
+      background-color: $--dk-panel-background;
+    }
+  }
+}
 </style>
