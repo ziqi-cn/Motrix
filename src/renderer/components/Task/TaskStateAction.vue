@@ -93,7 +93,6 @@
             display: inline-flex;
             padding: 10px;
             margin: 0 10px;
-            background: $--background-color-gray;
             color: #fff;
             align-items: center;
             justify-content: center;
@@ -106,7 +105,6 @@
         .task-action-stop {
             display: inline-flex;
             padding: 10px;
-            background: $--background-color-gray;
             color: #fff;
             align-items: center;
             justify-content: center;

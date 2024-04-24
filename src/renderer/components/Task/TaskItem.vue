@@ -3,13 +3,18 @@
     <el-row>
       <el-col :span="16">
         <div class="task-name" :title="taskFullName">
-        <span>{{ taskFullName }}</span>
+          <span>{{ taskFullName }}</span>
         </div>
       </el-col>
       <el-col :span="8">
-        <div v-if="task.completedLength > 0 || task.totalLength > 0" class="task-progress-num">
-        <span>{{ task.completedLength | bytesToSize(2) }}</span>
-        <span v-if="task.totalLength > 0"> / {{ task.totalLength | bytesToSize(2) }}</span>
+        <div
+          v-if="task.completedLength > 0 || task.totalLength > 0"
+          class="task-progress-num"
+        >
+          <span>{{ task.completedLength | bytesToSize(2) }}</span>
+          <span v-if="task.totalLength > 0">
+            / {{ task.totalLength | bytesToSize(2) }}</span
+          >
         </div>
       </el-col>
     </el-row>
@@ -103,8 +108,8 @@
   position: relative;
   min-height: 80px;
   padding: 16px 12px;
-  background-color: $--task-item-background;
-  border: 2px solid $--task-item-border-color;
+  background-color: $--background-color-gray;
+  border: 2px solid $--background-color-gray;
   border-radius: 0px;
   margin-bottom: 16px;
   transition: $--border-transition-base;
@@ -116,30 +121,29 @@
   border-color: $--task-item-hover-border-color;
 }
 .task-name {
-  color: #CBCBCB;
+  color: $--color-black;
   margin-bottom: 1.5rem;
   word-break: break-all;
   min-height: 26px;
-  &> span {
+  & > span {
     font-size: 14px;
     line-height: 26px;
-    overflow : hidden;
+    overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
   }
 }
-.task-progress-num{
+.task-progress-num {
   display: flex;
   justify-content: flex-end;
-  color: #CBCBCB;
   margin-bottom: 1.5rem;
   min-height: 26px;
-  &> span {
+  & > span {
     font-size: 14px;
     line-height: 26px;
-    overflow : hidden;
+    overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -150,5 +154,20 @@
   position: absolute;
   bottom: 10px;
   right: 12px;
+}
+.theme-dark {
+  .task-item {
+    background-color: $--task-item-background;
+    border: 2px solid $--task-item-border-color;
+    &:hover {
+      border-color: $--task-item-hover-border-color;
+    }
+  }
+  .selected .task-item {
+    border-color: $--task-item-hover-border-color;
+  }
+  .task-name, .task-progress-num  {
+    color: $--dk-aside-text-color;
+  }
 }
 </style>

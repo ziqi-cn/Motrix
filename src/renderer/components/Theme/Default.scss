@@ -134,6 +134,44 @@ iframe {
   }
 }
 
+.el-form-item__content{
+  .el-textarea__inner,.el-input__inner{
+    background-color: $--background-color-gray !important;
+    border: none !important;
+    color: #eee;
+    &:focus {
+      outline: none;
+      border-color: $--color-primary;
+    }
+    &::placeholder {
+      color: #777;
+    }
+  }
+  .el-input-group__append{
+    background-color: $--background-color-gray !important;
+    border: none !important;
+  }
+  .el-button.select-directory.el-button--default.el-button--mini{
+    background-color: $--background-color-gray !important;
+    border: none !important;
+  }
+  .el-input-number__decrease.is-disabled{
+    display: none !important;
+  }
+  .el-input-number__increase{
+    display: none !important;
+  }
+  .el-input-number__decrease{
+    display: none !important;
+  }
+}
+
+.upload-torrent {
+  .el-upload, .el-upload-dragger {
+    background-color: $--background-color-gray !important;
+  }
+}
+
 .el-drawer__container {
   outline: none;
 }
@@ -297,6 +335,17 @@ iframe {
 .form-static-value {
   word-break: break-all;
   color: $--input-font-color;
+}
+
+.task-state-actions {
+  .task-state-ul {
+    .task-action-start, .task-action-stop {
+      background: $--dk--background-color-gray;
+    }
+  }
+}
+.task-actions svg{
+  color: $--subnav-title-color;
 }
 
 @media only screen and (max-width:567px) {

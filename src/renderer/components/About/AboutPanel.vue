@@ -67,4 +67,10 @@
     padding-bottom: 0;
   }
 }
+.theme-dark{
+  .el-dialog.app-about-dialog{
+    background: $--dk-panel-background;
+    border: 1px solid $--color-text-primary;
+  }
+}
 </style>

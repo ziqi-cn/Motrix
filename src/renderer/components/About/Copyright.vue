@@ -55,4 +55,12 @@
     margin-left: 30px;
   }
 }
+.theme-dark {
+  .copyright {
+    background: $--dk-panel-background;
+    a {
+      color: $--app-copyright-color;
+    }
+  }
+}
 </style>

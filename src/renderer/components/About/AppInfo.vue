@@ -103,4 +103,22 @@
     }
   }
 }
+.theme-dark {
+  .app-info {
+    background: $--dk-panel-background;
+    .app-version{
+      span {
+        color: #CBCBCB;
+      }
+    }
+    .engine-info {
+      ul {
+        color: $--app-engine-info-color;
+        li {
+          color: $--app-engine-title-color;
+        }
+      }
+    }
+  }
+}
 </style>

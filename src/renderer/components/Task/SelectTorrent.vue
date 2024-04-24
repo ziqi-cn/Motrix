@@ -151,17 +151,12 @@
   .el-upload, .el-upload-dragger {
     width: 100%;
     border: 4px;
-    background: $--background-color-gray;
   }
   .el-upload-dragger {
     border-radius: 4px;
     padding: 24px;
     height: auto;
   }
-  // .upload-inbox-icon {
-  //   display: inline-block;
-  //   margin-bottom: 12px;
-  // }
   .torrent-name {
     margin-top: 4px;
     font-size: $--font-size-small;
@@ -210,6 +205,36 @@
       vertical-align: middle;
       height: 14px;
       padding: 1px;
+    }
+  }
+}
+.theme-dark {
+  .upload-torrent {
+    .torrent-name {
+      color: $--color-text-secondary;
+    }
+  }
+  .selective-torrent {
+    .mo-task-files{
+      border-color: $--dk--background-color-gray !important;
+      background: $--dk--background-color-gray !important;
+      .el-table__header{
+        background: $--dk--background-color-gray !important;
+      }
+      .el-table__cell{
+        border-color: $--dk--background-color-gray !important;
+        background: $--dk--background-color-gray !important;
+      }
+    }
+    .el-table__body{
+      border-color: $--dk--background-color-gray !important;
+      background: $--dk--background-color-gray !important;
+    }
+    .el-table__body-wrapper.is-scrolling-none{
+      background: $--dk--background-color-gray !important;
+    }
+    .el-table.el-table--fit.el-table--striped.el-table--enable-row-hover.el-table--enable-row-transition.el-table--mini{
+      background: $--dk--background-color-gray !important;
     }
   }
 }
