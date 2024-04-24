@@ -213,7 +213,6 @@
   .el-input-group__prepend{
     border-color: $--dk--background-color-gray !important;
   }
-  
   .mo-directory-divider {
     &::after {
       background: $--border-color-base;
