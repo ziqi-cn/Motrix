@@ -33,8 +33,3 @@
   }
 </script>
 
-<style lang="scss">
-  .select-directory{
-    background: $--background-color-gray;
-  }
-</style>
