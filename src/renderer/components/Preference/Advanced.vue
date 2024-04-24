@@ -851,12 +851,12 @@
     .el-select__tags {
       overflow-x: auto;
       .el-tag.el-tag--info.el-tag--mini.el-tag--light{
-        background: #282828;
+        background: $--table-border-color;
         border:none;
       }
       .el-tag__close.el-icon-close{
         color: #131517;
-        background: #5B5B5B;
+        background: $--table-border-color;
         :hover{
           background: #343434;
         }

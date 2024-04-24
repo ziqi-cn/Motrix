@@ -19,10 +19,10 @@
 <style lang="scss">
 .form-preference {
   padding: 16px 7% 64px 16px;
-  .el-switch__core {
+  /* .el-switch__core {
     background: #282828;
     border-color: #282828;
-  }
+  } */
   .el-switch__label {
     font-weight: normal;
     color: $--color-text-regular;
@@ -63,14 +63,15 @@
     }
   }
   .el-form-item__content{
-    .el-input__inner{
+    .el-input__inner, .el-input-group__append, .el-textarea__inner{
       background-color: $--background-color-gray !important;
       border: none !important;
+      color: $--color-text-regular;
     }
-    .el-input-group__append{
+    /* .el-input-group__append{
       background-color: $--background-color-gray !important;
       border: none !important;
-    }
+    } */
     .el-button.select-directory.el-button--default.el-button--mini{
       background-color: $--background-color-gray !important;
       margin: 0 !important;

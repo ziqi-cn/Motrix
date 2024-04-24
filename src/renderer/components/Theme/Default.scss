@@ -347,6 +347,11 @@ iframe {
 .task-actions svg{
   color: $--subnav-title-color;
 }
+.el-switch__core,
+.el-checkbox__inner {
+  border-color: $--background-color-gray;
+  background-color: $--background-color-gray;
+}
 
 @media only screen and (max-width:567px) {
   .hidden-xs-only {
