@@ -1,12 +1,13 @@
 <template>
   <div class="app-info">
     <div class="app-version">
-      <mo-logo :width="93" :height="21" style="vertical-align: bottom;" />
+      <mo-logo :width="40" :height="34" style="vertical-align: middle;" />
       <span>Version {{version}}</span>
     </div>
-    <div class="app-icon"></div>
     <div class="engine-info" v-if="!!engine">
       <h4>{{ $t('about.engine-version') }} {{engine.version}}</h4>
+      <h4>electron {{version_electron}}</h4>
+      <h4>chrome {{version_chrome}}</h4>
       <ul v-if="!isMas()">
         <li
           v-for="(feature, index) in engine.enabledFeatures"
@@ -32,6 +33,14 @@
         type: String,
         default: ''
       },
+      version_chrome: {
+        type: String,
+        default: process.versions.chrome
+      },
+      version_electron: {
+        type: String,
+        default: process.versions.electron
+      },
       engine: {
         type: Object,
         default () {
@@ -50,15 +59,18 @@
 
 <style lang="scss">
 .app-info {
+  background: $--panel-background;
   position: relative;
   margin: 8px 0;
-  .app-version span {
-    display: inline-block;
-    vertical-align: bottom;
-    font-size: $--font-size-large;
-    margin-left: 20px;
-    color: $--app-version-color;
-    line-height: 18px;
+  .app-version{
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: $--font-size-large;
+      margin-left: 0px;
+      color: #CBCBCB;
+      line-height: 18px;
+    }
   }
   .app-icon {
     position: absolute;
@@ -70,22 +82,41 @@
     height: 128px;
   }
   .engine-info {
-    margin: 50px 35% 0 8px;
+    margin: 20px 35% 0 8px;
     h4 {
       font-size: $--font-size-base;
       font-weight: normal;
-      color: $--app-engine-title-color;
+      color: #CBCBCB;
     }
     ul {
       font-size: 12px;
       color: $--app-engine-info-color;
       list-style: none;
       padding: 0;
-      line-height: 20px;
+      line-height: 25px;
       @include clearfix();
       li {
+        color: $--app-engine-title-color;
         float: left;
         width: 50%;
+      }
+    }
+  }
+}
+.theme-dark {
+  .app-info {
+    background: $--dk-panel-background;
+    .app-version{
+      span {
+        color: #CBCBCB;
+      }
+    }
+    .engine-info {
+      ul {
+        color: $--app-engine-info-color;
+        li {
+          color: $--app-engine-title-color;
+        }
       }
     }
   }

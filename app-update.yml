@@ -1,2 +1,2 @@
-provider: generic
-url: 'https://dl.motrix.app/releases/'
+provider: github
+url: 'https://github.com/imfile-io/imfile-desktop'

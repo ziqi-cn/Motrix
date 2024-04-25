@@ -1,7 +1,14 @@
 <template>
   <el-container class="content panel" direction="vertical">
     <el-header class="panel-header" height="84">
-      <h4 class="hidden-xs-only">{{ title }}</h4>
+      <el-row class="panel-row">
+        <el-col :span="4" @click.native="() => nav('basic')">
+          <h4>{{ $t('preferences.basic') }}</h4>
+        </el-col>
+        <el-col :span="4" @click.native="() => nav('advanced')" class="active">
+          <h4>{{ $t('preferences.advanced') }}</h4>
+        </el-col>
+      </el-row>
       <mo-subnav-switcher
         :title="title"
         :subnavs="subnavs"
@@ -109,7 +116,7 @@
               />
             </el-select>
             <div class="el-form-item__info" style="margin-top: 8px;">
-              <a target="_blank" href="https://github.com/agalwood/Motrix/wiki/Proxy" rel="noopener noreferrer">
+              <a target="_blank" href="https://github.com/ImfileApp/Imfile/wiki/Proxy-Setting-Guide" rel="noopener noreferrer">
                 {{ $t('preferences.proxy-tips') }}
                 <mo-icon name="link" width="12" height="12" />
               </a>
@@ -170,9 +177,9 @@
                       class="sync-tracker-btn"
                     >
                       <mo-icon
-                        name="refresh"
-                        width="12"
-                        height="12"
+                        name="server-refresh"
+                        width="18"
+                        height="16"
                         :spin="true"
                         v-if="trackerSyncing"
                       />
@@ -255,10 +262,10 @@
                 </i>
               </el-input>
               <div class="el-form-item__info" style="margin-top: 8px;">
-                <a target="_blank" href="https://github.com/agalwood/Motrix/wiki/RPC" rel="noopener noreferrer">
+                <!-- <a target="_blank" href="https://github.com/agalwood/Motrix/wiki/RPC" rel="noopener noreferrer">
                   {{ $t('preferences.rpc-secret-tips') }}
                   <mo-icon name="link" width="12" height="12" />
-                </a>
+                </a> -->
               </div>
             </el-col>
           </el-row>
@@ -365,11 +372,11 @@
             </el-button-group>
           </el-col>
         </el-form-item>
-        <el-form-item
+        <!-- <el-form-item
           :label="`${$t('preferences.developer')}: `"
           :label-width="formLabelWidth"
-        >
-          <el-col class="form-item-sub" :span="24">
+        > -->
+          <!-- <el-col class="form-item-sub" :span="24">
             {{ $t('preferences.aria2-conf-path') }}
             <el-input placeholder="" disabled v-model="aria2ConfPath">
               <mo-show-in-folder
@@ -378,8 +385,8 @@
                 :path="aria2ConfPath"
               />
             </el-input>
-          </el-col>
-          <el-col class="form-item-sub" :span="24">
+          </el-col> -->
+          <!-- <el-col class="form-item-sub" :span="24">
             {{ $t('preferences.download-session-path') }}
             <el-input placeholder="" disabled v-model="sessionPath">
               <mo-show-in-folder
@@ -388,8 +395,8 @@
                 :path="sessionPath"
               />
             </el-input>
-          </el-col>
-          <el-col class="form-item-sub" :span="24">
+          </el-col> -->
+          <!-- <el-col class="form-item-sub" :span="24">
             {{ $t('preferences.app-log-path') }}
             <el-row :gutter="16">
               <el-col :span="18">
@@ -412,16 +419,16 @@
                 </el-select>
               </el-col>
             </el-row>
-          </el-col>
-          <el-col class="form-item-sub" :span="24">
+          </el-col> -->
+          <!-- <el-col class="form-item-sub" :span="24">
             <el-button plain type="warning" @click="() => onSessionResetClick()">
               {{ $t('preferences.session-reset') }}
             </el-button>
             <el-button plain type="danger" @click="() => onFactoryResetClick()">
               {{ $t('preferences.factory-reset') }}
             </el-button>
-          </el-col>
-        </el-form-item>
+          </el-col> -->
+        <!-- </el-form-item> -->
       </el-form>
       <div class="form-actions">
         <el-button
@@ -432,6 +439,7 @@
         </el-button>
         <el-button
           @click="resetForm('advancedForm')"
+          class="btn_discard"
         >
           {{ $t('preferences.discard') }}
         </el-button>
@@ -592,6 +600,13 @@
       }
     },
     methods: {
+      nav (category = 'basic') {
+        this.$router.push({
+          path: `/preference/${category}`
+        }).catch(err => {
+          console.log(err)
+        })
+      },
       handleLocaleChange (locale) {
         const lng = getLanguage(locale)
         getLocaleManager().changeLanguage(lng)
@@ -724,7 +739,7 @@
       submitForm (formName) {
         this.$refs[formName].validate((valid) => {
           if (!valid) {
-            console.error('[Motrix] preference form valid:', valid)
+            console.error('[imFile] preference form valid:', valid)
             return false
           }
 
@@ -754,7 +769,7 @@
             data.rpcListenPort = this.rpcDefaultPort
           }
 
-          console.log('[Motrix] preference changed data:', data)
+          console.log('[imFile] preference changed data:', data)
 
           this.$store.dispatch('preference/save', data)
             .then(() => {
@@ -816,10 +831,17 @@
 .proxy-scope {
   width: 100%;
 }
+
 .bt-tracker {
   position: relative;
+  .el-textarea__inner{
+    background-color: $--background-color-gray;
+    border-color: $--background-color-gray;
+  }
   .sync-tracker-btn {
+    background-color: $--background-color-gray;
     line-height: 0;
+    border-color: $--background-color-gray;
   }
   .track-source {
     margin-bottom: 16px;
@@ -828,10 +850,82 @@
     }
     .el-select__tags {
       overflow-x: auto;
+      .el-tag.el-tag--info.el-tag--mini.el-tag--light{
+        background: $--table-border-color;
+        border:none;
+      }
+      .el-tag__close.el-icon-close{
+        color: #131517;
+        background: $--table-border-color;
+        :hover{
+          background: #343434;
+        }
+      }
     }
   }
 }
+.el-form-item__content{
+  .el-textarea__inner{
+    background-color: $--background-color-gray;
+    border-color: $--background-color-gray;
+  }
+  .el-button.el-button--default.el-button--mini{
+    background-color: $--background-color-gray;
+    border-color: $--background-color-gray;
+  }
+}
+.form-actions{
+  .btn_discard{
+    background: #282828;
+    color: #cbcbcb;
+    border-color: #282828;
+  }
+}
+
 .ua-group {
   margin-top: 8px;
+}
+.theme-dark{
+  .bt-tracker {
+    .el-textarea__inner{
+      background-color: $--background-color-gray;
+      border-color: $--background-color-gray;
+    }
+    .sync-tracker-btn {
+      background-color: $--background-color-gray;
+      border-color: $--background-color-gray;
+    }
+    .track-source {
+      .el-select__tags {
+        .el-tag.el-tag--info.el-tag--mini.el-tag--light{
+          background: #282828;
+        }
+        .el-tag__close.el-icon-close{
+          color: #131517;
+          background: #5B5B5B;
+          :hover{
+            background: #343434;
+          }
+        }
+      }
+    }
+  }
+  .el-form-item__content{
+    .el-textarea__inner{
+      background-color: $--background-color-gray;
+      border-color: $--background-color-gray;
+    }
+    .el-button.el-button--default.el-button--mini{
+      background-color: $--dk--background-color-gray;
+      border-color: $--dk--background-color-gray;
+    }
+  }
+  .form-actions{
+    .btn_discard{
+      background: #282828;
+      color: #cbcbcb;
+      border-color: #282828;
+    }
+  }
 }
 </style>

@@ -3,7 +3,7 @@ import is from 'electron-is'
 import Store from 'electron-store'
 
 import {
-  getConfigBasePath,
+  // getConfigBasePath,
   getDhtPath,
   getMaxConnectionPerServer,
   getUserDownloadsPath
@@ -46,7 +46,7 @@ export default class ConfigManager {
   initSystemConfig () {
     this.systemConfig = new Store({
       name: 'system',
-      cwd: getConfigBasePath(),
+      cwd: null,
       /* eslint-disable quote-props */
       defaults: {
         'all-proxy': EMPTY_STRING,
@@ -89,7 +89,7 @@ export default class ConfigManager {
   initUserConfig () {
     this.userConfig = new Store({
       name: 'user',
-      cwd: getConfigBasePath(),
+      cwd: null,
       // Schema need electron-store upgrade to 3.x.x,
       // but it will cause the application build to fail.
       // schema: {
@@ -124,16 +124,16 @@ export default class ConfigManager {
           'bypass': EMPTY_STRING,
           'scope': PROXY_SCOPE_OPTIONS
         },
-        'resume-all-when-app-launched': false,
+        'resume-all-when-app-launched': true,
         'run-mode': APP_RUN_MODE.STANDARD,
         'show-progress-bar': true,
         'task-notification': true,
-        'theme': APP_THEME.AUTO,
+        'theme': APP_THEME.LIGHT,
         'tracker-source': [
           NGOSANG_TRACKERS_BEST_IP_URL_CDN,
           NGOSANG_TRACKERS_BEST_URL_CDN
         ],
-        'tray-theme': APP_THEME.AUTO,
+        'tray-theme': APP_THEME.LIGHT,
         'tray-speedometer': is.macOS(),
         'update-channel': 'latest',
         'window-state': {}
@@ -166,7 +166,7 @@ export default class ConfigManager {
 
   fixUserConfig () {
     // Fix the value of open-at-login when the user delete
-    // the Motrix self-starting item through startup management.
+    // the imFile self-starting item through startup management.
     const openAtLogin = app.getLoginItemSettings(LOGIN_SETTING_OPTIONS).openAtLogin
     if (this.getUserConfig('open-at-login') !== openAtLogin) {
       this.setUserConfig('open-at-login', openAtLogin)

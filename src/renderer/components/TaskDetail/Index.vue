@@ -30,11 +30,11 @@
         <span class="task-detail-tab-label" slot="label"><i class="el-icon-discover"></i></span>
         <mo-task-trackers :task="task" />
       </el-tab-pane>
-      <el-tab-pane name="peers" lazy v-if="isBT">
+      <!-- <el-tab-pane name="peers" lazy v-if="isBT">
         <span class="task-detail-tab-label" slot="label"><i class="el-icon-s-custom"></i></span>
         <mo-task-peers :peers="peers" />
-      </el-tab-pane>
-      <el-tab-pane name="files" lazy>
+      </el-tab-pane> -->
+      <!-- <el-tab-pane name="files" lazy>
         <span class="task-detail-tab-label" slot="label"><i class="el-icon-files"></i></span>
         <mo-task-files
           ref="detailFileList"
@@ -42,7 +42,7 @@
           :files="fileList"
           @selection-change="handleSelectionChange"
         />
-      </el-tab-pane>
+      </el-tab-pane> -->
     </el-tabs>
     <div class="task-detail-actions">
       <div class="action-wrapper action-wrapper-left" v-if="optionsChanged">
@@ -291,12 +291,19 @@
 .task-detail-drawer {
   min-width: 478px;
   .el-drawer__header {
+    color:#fff;
     padding-top: 2rem;
     margin-bottom: 0;
   }
   .el-drawer__body {
     position: relative;
     overflow: hidden;
+  }
+  .el-tabs__nav-wrap::after {
+    display: none !important;
+  }
+  .el-tabs__active-bar {
+    display: none !important;
   }
   .task-detail-actions {
     position: sticky;

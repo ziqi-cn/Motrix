@@ -1,29 +1,30 @@
 <template>
-  <el-container
-    class="main panel"
-    direction="horizontal"
-  >
-    <el-aside
-      width="200px"
-      class="subnav hidden-xs-only"
-    >
+  <el-container class="main panel" direction="horizontal">
+    <!-- <el-aside width="200px" class="subnav hidden-xs-only">
       <mo-task-subnav :current="status" />
-    </el-aside>
-    <el-container
-      class="content panel"
-      direction="vertical"
-    >
-      <el-header
-        class="panel-header"
-        height="84"
-      >
-        <h4 class="task-title hidden-xs-only">{{ title }}</h4>
-        <mo-subnav-switcher
-          :title="title"
-          :subnavs="subnavs"
-          class="hidden-sm-and-up"
-        />
+    </el-aside> -->
+    <el-container class="content panel" direction="vertical">
+      <el-header class="panel-header" height="84">
+        <el-row class="panel-row">
+          <el-col :span="4" @click.native="() => nav('active')" :class="[status === 'active' ? 'active' : '']">
+            <h4>{{ $t('task.active') }}</h4>
+          </el-col>
+          <el-col :span="4" @click.native="() => nav('waiting')" :class="[status === 'waiting' ? 'active' : '']">
+            <h4>{{ $t('task.waiting') }}</h4>
+          </el-col>
+          <el-col :span="4" @click.native="() => nav('stopped')" :class="[status === 'stopped' ? 'active' : '']">
+            <h4>{{ $t('task.stopped') }}</h4>
+          </el-col>
+        </el-row>
+        <!-- <mo-subnav-switcher :title="title" :subnavs="subnavs" class="hidden-sm-and-up" /> -->
         <mo-task-actions />
+      </el-header>
+      <el-header class="panel-header" height="50">
+        <el-row class="panel-row">
+          <el-col :span="7">
+          </el-col>
+        </el-row>
+        <state-task-actions />
       </el-header>
       <el-main class="panel-content">
         <mo-task-list />
@@ -41,6 +42,7 @@
   import TaskSubnav from '@/components/Subnav/TaskSubnav'
   import TaskActions from '@/components/Task/TaskActions'
   import TaskList from '@/components/Task/TaskList'
+  import TaskStateAction from '@/components/Task/TaskStateAction'
   import SubnavSwitcher from '@/components/Subnav/SubnavSwitcher'
   import {
     getTaskUri,
@@ -57,6 +59,7 @@
     components: {
       [TaskSubnav.name]: TaskSubnav,
       [TaskActions.name]: TaskActions,
+      [TaskStateAction.name]: TaskStateAction,
       [TaskList.name]: TaskList,
       [SubnavSwitcher.name]: SubnavSwitcher
     },
@@ -103,6 +106,13 @@
       status: 'onStatusChange'
     },
     methods: {
+      nav (status = 'active') {
+        this.$router.push({
+          path: `/task/${status}`
+        }).catch(err => {
+          console.log(err)
+        })
+      },
       onStatusChange () {
         this.changeCurrentList()
       },
@@ -127,7 +137,7 @@
           header,
           ...rest
         } = options
-        console.log('[Motrix] show add task dialog options: ', options)
+        console.log('[imFile] show add task dialog options: ', options)
 
         const headers = parseHeader(header)
         const newOptions = {
@@ -212,7 +222,7 @@
       batchDeleteTaskFiles (taskList) {
         const promises = taskList.map((task, index) => delayDeleteTaskFiles(task, index * 200))
         Promise.allSettled(promises).then(results => {
-          console.log('[Motrix] batch delete task files: ', results)
+          console.log('[imFile] batch delete task files: ', results)
         })
       },
       removeTaskItems (gids) {
@@ -228,7 +238,7 @@
       },
       handlePauseTask (payload) {
         const { task, taskName } = payload
-        this.$msg.info(this.$t('task.download-pause-message', { taskName }))
+        // this.$msg.info(this.$t('task.download-pause-message', { taskName }))
         this.$store.dispatch('task/pauseTask', task)
           .catch(({ code }) => {
             if (code === 1) {
@@ -262,7 +272,7 @@
 
         this.$store.dispatch('task/getTaskOption', gid)
           .then((data) => {
-            console.log('[Motrix] get task option:', data)
+            console.log('[imFile] get task option:', data)
             const { dir, header, split } = data
             const options = {
               dir,

@@ -116,5 +116,9 @@ export default {
   'bt-download-complete-tips': '提示：你可以停止任務結束做種',
   'bt-stopping-seeding-tip': '停止做種中，需要些時間才能斷開連接，請稍候...',
   'download-fail-message': '{{taskName}} 下載失敗',
-  'download-fail-notify': '下載失敗'
+  'download-fail-notify': '下載失敗',
+  'task-add':'添加任務',
+  'task-all-start' : '全部開始',
+  'task-all-stop' : '全部暫停',
+  'task-not-data' : '暫無任務'
 }

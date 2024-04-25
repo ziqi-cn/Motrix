@@ -6,17 +6,17 @@
     :label-width="formLabelWidth"
     v-if="task"
   >
-    <el-form-item :label="`${$t('task.task-gid')}: `">
+    <el-form-item :label="`${$t('task.task-gid')} `">
       <div class="form-static-value">
         {{ task.gid }}
       </div>
     </el-form-item>
-    <el-form-item :label="`${$t('task.task-name')}: `">
+    <el-form-item :label="`${$t('task.task-name')} `">
       <div class="form-static-value">
         {{ taskFullName }}
       </div>
     </el-form-item>
-    <el-form-item :label="`${$t('task.task-dir')}: `">
+    <el-form-item :label="`${$t('task.task-dir')} `">
       <el-input placeholder="" readonly v-model="path">
         <mo-show-in-folder
           slot="append"
@@ -25,23 +25,26 @@
         />
       </el-input>
     </el-form-item>
-    <el-form-item :label="`${$t('task.task-status')}: `">
+    <el-form-item :label="`${$t('task.task-status')} `">
       <div class="form-static-value">
-        <mo-task-status :theme="currentTheme" :status="taskStatus" />
+        {{ taskStatus && taskStatus.toUpperCase() }}
       </div>
     </el-form-item>
-    <el-form-item :label="`${$t('task.task-error-info')}: `" v-if="task.errorCode && task.errorCode !== '0'">
+    <el-form-item :label="`${$t('task.task-error-info')} `" v-if="task.errorCode && task.errorCode !== '0'">
       <div class="form-static-value">
         {{ task.errorCode }} {{ task.errorMessage }}
       </div>
     </el-form-item>
 
-    <el-divider v-if="isBT">
+    <!-- <el-divider v-if="isBT">
       <i class="el-icon-attract"></i>
       {{ $t('task.task-bittorrent-info') }}
-    </el-divider>
+    </el-divider> -->
 
-    <el-form-item :label="`${$t('task.task-info-hash')}: `" v-if="isBT">
+    <el-form-item :label="`${$t('task.task-bittorrent-info')} `" v-if="isBT">
+    </el-form-item>
+
+    <el-form-item :label="`${$t('task.task-info-hash')} `" v-if="isBT">
       <div class="form-static-value">
         {{ task.infoHash }}
         <i class="copy-link" @click="handleCopyClick">
@@ -53,22 +56,22 @@
         </i>
       </div>
     </el-form-item>
-    <el-form-item :label="`${$t('task.task-piece-length')}: `" v-if="isBT">
+    <el-form-item :label="`${$t('task.task-piece-length')} `" v-if="isBT">
       <div class="form-static-value">
         {{ task.pieceLength | bytesToSize }}
       </div>
     </el-form-item>
-    <el-form-item :label="`${$t('task.task-num-pieces')}: `" v-if="isBT">
+    <el-form-item :label="`${$t('task.task-num-pieces')} `" v-if="isBT">
       <div class="form-static-value">
         {{ task.numPieces }}
       </div>
     </el-form-item>
-    <el-form-item :label="`${$t('task.task-bittorrent-creation-date')}: `" v-if="isBT">
+    <el-form-item :label="`${$t('task.task-bittorrent-creation-date')} `" v-if="isBT">
       <div class="form-static-value">
         {{ task.bittorrent.creationDate | localeDateTimeFormat(locale) }}
       </div>
     </el-form-item>
-    <el-form-item :label="`${$t('task.task-bittorrent-comment')}: `" v-if="isBT">
+    <el-form-item :label="`${$t('task.task-bittorrent-comment')} `" v-if="isBT">
       <div class="form-static-value">
         {{ task.bittorrent.comment }}
       </div>
@@ -179,5 +182,50 @@
 <style lang="scss">
 .copy-link {
   cursor: pointer;
+}
+.mo-task-general{
+  .el-form-item__label{
+    color: #CBCBCB;
+  }
+  .form-static-value{
+    color: #CBCBCB;
+  }
+  .el-input__inner::placeholder{
+    color: $--color-text-primary !important;
+  }
+  .el-input__inner{
+    color: #cbcbcb !important;
+    background: $--background-color-gray !important;
+    border: 4px !important;
+    border-color: $--background-color-gray !important;
+  }
+  .el-input-group__append{
+    border-color: $--background-color-gray !important;
+    background: $--background-color-gray !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+.theme-dark {
+  .mo-task-general{
+    .el-form-item__label{
+      color: #CBCBCB;
+    }
+    .form-static-value{
+      color: #CBCBCB;
+    }
+    .el-input__inner::placeholder{
+      color: $--color-text-primary !important;
+    }
+    .el-input__inner{
+      color: #cbcbcb !important;
+      background: $--dk--background-color-gray !important;
+      border-color: $--dk--background-color-gray !important;
+    }
+    .el-input-group__append{
+      border-color: $--dk--background-color-gray !important;
+      background: $--dk--background-color-gray !important;
+    }
+  }
 }
 </style>

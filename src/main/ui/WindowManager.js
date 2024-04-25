@@ -55,15 +55,12 @@ export default class WindowManager extends EventEmitter {
       result.attrs.frame = false
     }
 
-    // Optimized for small screen users
     const { width, height } = screen.getPrimaryDisplay().workAreaSize
     const widthScale = width >= 1280 ? 1 : 0.875
     const heightScale = height >= 800 ? 1 : 0.875
     result.attrs.width *= widthScale
     result.attrs.height *= heightScale
 
-    // fix AppImage Dock Icon Missing
-    // https://github.com/AppImage/AppImageKit/wiki/Bundling-Electron-apps
     if (is.linux()) {
       result.attrs.icon = join(__static, './512x512.png')
     }
@@ -288,7 +285,7 @@ export default class WindowManager extends EventEmitter {
     if (!window) {
       return
     }
-    logger.info('[Motrix] send command to:', command, ...args)
+    logger.info('[imFile] send command to:', command, ...args)
     window.webContents.send('command', command, ...args)
   }
 

@@ -4,18 +4,18 @@
       <mo-logo-mini />
       <ul class="menu top-menu">
         <li @click="nav('/task')" class="non-draggable">
-          <mo-icon name="menu-task" width="20" height="20" />
+          <mo-icon name="menu-task" width="24" height="24" />
         </li>
         <li @click="showAddTask()" class="non-draggable">
-          <mo-icon name="menu-add" width="20" height="20" />
+          <mo-icon name="menu-add" width="24" height="24" />
         </li>
       </ul>
       <ul class="menu bottom-menu">
         <li @click="nav('/preference')" class="non-draggable">
-          <mo-icon name="menu-preference" width="20" height="20" />
+          <mo-icon name="menu-preference" width="24" height="24" />
         </li>
         <li @click="showAboutPanel" class="non-draggable">
-          <mo-icon name="menu-about" width="20" height="20" />
+          <mo-icon name="menu-about" width="24" height="24" />
         </li>
       </ul>
     </div>
@@ -86,18 +86,18 @@
   user-select: none;
   cursor: default;
   > li {
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
     margin-top: 24px;
     cursor: pointer;
-    border-radius: 16px;
+    border-radius: 17px;
     transition: background-color 0.25s;
     &:hover {
       background-color: rgba(255, 255, 255, 0.15);
     }
   }
   svg {
-    padding: 6px;
+    padding: 5px;
     color: #fff;
   }
 }

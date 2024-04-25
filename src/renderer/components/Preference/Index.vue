@@ -1,8 +1,8 @@
 <template>
   <el-container class="main panel" direction="horizontal">
-    <el-aside width="200px" class="subnav hidden-xs-only">
+    <!-- <el-aside width="200px" class="subnav hidden-xs-only">
       <router-view name="subnav" />
-    </el-aside>
+    </el-aside> -->
     <router-view name="form" />
   </el-container>
 </template>
@@ -19,6 +19,10 @@
 <style lang="scss">
 .form-preference {
   padding: 16px 7% 64px 16px;
+  /* .el-switch__core {
+    background: #282828;
+    border-color: #282828;
+  } */
   .el-switch__label {
     font-weight: normal;
     color: $--color-text-regular;
@@ -53,6 +57,35 @@
     &:last-of-type {
       margin-bottom: 0;
     }
+    .el-input__inner{
+      background-color: $--background-color-gray !important;
+      border: none !important;
+    }
+  }
+  .el-form-item__content{
+    .el-input__inner, .el-input-group__append, .el-textarea__inner{
+      background-color: $--background-color-gray !important;
+      border: none !important;
+      color: $--color-text-regular;
+    }
+    /* .el-input-group__append{
+      background-color: $--background-color-gray !important;
+      border: none !important;
+    } */
+    .el-button.select-directory.el-button--default.el-button--mini{
+      background-color: $--background-color-gray !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    .el-input-number__decrease.is-disabled{
+      display: none !important;
+    }
+    .el-input-number__increase{
+      display: none !important;
+    }
+    .el-input-number__decrease{
+      display: none !important;
+    }
   }
 }
 .form-actions {
@@ -62,7 +95,12 @@
   z-index: 10;
   width: -webkit-fill-available;
   box-sizing: border-box;
-  padding: 24px 16px;
+  padding-left: 300px !important;
+  .btn_discard{
+    background: #282828;
+    color: #cbcbcb;
+    border-color: #282828;
+  }
 }
 .action-link {
   cursor: pointer;
@@ -72,4 +110,5 @@
     text-decoration: underline;
   }
 }
+
 </style>

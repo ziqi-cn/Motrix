@@ -12,7 +12,7 @@
   >
     <el-form ref="taskForm" label-position="left" :model="form" :rules="rules">
       <el-tabs :value="type" @tab-click="handleTabClick">
-        <el-tab-pane :label="$t('task.uri-task')" name="uri">
+        <el-tab-pane :label="$t('task.uri-task')" name="uri" >
           <el-form-item>
             <el-input
               ref="uri"
@@ -33,7 +33,7 @@
         </el-tab-pane>
       </el-tabs>
       <el-row :gutter="12">
-        <el-col :span="15" :xs="24">
+        <el-col :span="24" :xs="24">
           <el-form-item
             :label="`${$t('task.task-out')}: `"
             :label-width="formLabelWidth"
@@ -45,7 +45,7 @@
             </el-input>
           </el-form-item>
         </el-col>
-        <el-col :span="9" :xs="24">
+        <!-- <el-col :span="9" :xs="24">
           <el-form-item
             :label="`${$t('task.task-split')}: `"
             :label-width="formLabelWidth"
@@ -59,7 +59,7 @@
             >
             </el-input-number>
           </el-form-item>
-        </el-col>
+        </el-col> -->
       </el-row>
       <el-form-item
         :label="`${$t('task.task-dir')}: `"
@@ -70,10 +70,10 @@
           v-model="form.dir"
           :readonly="isMas"
         >
-          <mo-history-directory
+          <!-- <mo-history-directory
             slot="prepend"
             @selected="handleHistoryDirectorySelected"
-          />
+          /> -->
           <mo-select-directory
             v-if="isRenderer"
             slot="append"
@@ -148,7 +148,7 @@
           </el-col>
           <el-col :span="8" :xs="24">
             <div class="help-link">
-              <a target="_blank" href="https://github.com/agalwood/Motrix/wiki/Proxy" rel="noopener noreferrer">
+              <a target="_blank" href="https://github.com/ImfileApp/Imfile/wiki/Proxy-Setting-Guide" rel="noopener noreferrer">
                 {{ $t('preferences.proxy-tips') }}
                 <mo-icon name="link" width="12" height="12" />
               </a>
@@ -178,7 +178,7 @@
           </el-checkbox>
         </el-col>
         <el-col :span="15" :xs="15">
-          <el-button @click="handleCancel('taskForm')">
+          <el-button @click="handleCancel('taskForm')" class="btn_cancel">
             {{$t('app.cancel')}}
           </el-button>
           <el-button
@@ -364,7 +364,7 @@
         } else if (type === 'metalink') {
         // @TODO addMetalink
         } else {
-          console.error('[Motrix] Add task fail', form)
+          console.error('[imFile] Add task fail', form)
         }
       },
       submitForm (formName) {
@@ -397,12 +397,53 @@
 .el-dialog.add-task-dialog {
   max-width: 632px;
   min-width: 380px;
+  background-color: $--panel-background;
+  border-radius: 4px;
+  .el-tabs__nav-wrap::after {
+    display: none !important;
+  }
+  .el-tabs__active-bar {
+    display: none !important;
+  }
   .task-advanced-options .el-form-item:last-of-type {
     margin-bottom: 0;
   }
   .el-tabs__header {
     user-select: none;
   }
+  .el-form-item__label{
+    color: #cbcbcb;
+  }
+  .el-textarea__inner::placeholder{
+    color: $--color-text-primary !important;
+  }
+
+  .el-textarea__inner{
+    color: #cbcbcb !important;
+    /* background: $--background-color-gray !important; */
+    border: 4px !important;
+    border-color: $--background-color-gray !important;
+  }
+  .el-input__inner::placeholder{
+    color: $--color-text-primary !important;
+  }
+  .el-input__inner{
+    color: #cbcbcb !important;
+    background: $--background-color-gray !important;
+    border: 4px !important;
+    border-color: $--background-color-gray !important;
+  }
+
+  .el-input-group__append{
+    border-color: $--background-color-gray !important;
+    background: $--background-color-gray !important;
+  }
+  .el-button.select-directory.el-button--default.el-button--mini{
+    background: $--background-color-gray !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
   .el-input-number.el-input-number--mini {
     width: 100%;
   }
@@ -416,10 +457,14 @@
   }
   .el-dialog__footer {
     padding-top: 20px;
-    background-color: $--add-task-dialog-footer-background;
-    border-radius: 0 0 5px 5px;
+    background-color: $--panel-background;
   }
   .dialog-footer {
+    .btn_cancel{
+      background: #282828;
+      color: #cbcbcb;
+      border-color: #282828;
+    }
     .chk {
       float: left;
       line-height: 28px;
@@ -431,6 +476,26 @@
           padding-left: 6px;
         }
       }
+    }
+  }
+}
+.theme-dark {
+  .el-dialog.add-task-dialog {
+    background-color: $--dk-panel-background;
+    .el-input__inner{
+      color: #cbcbcb !important;
+      background: $--dk--background-color-gray !important;
+      border-color: $--dk--background-color-gray !important;
+    }
+    .el-input-group__append{
+      border-color: $--dk--background-color-gray !important;
+      background: $--dk--background-color-gray !important;
+    }
+    .el-button.select-directory.el-button--default.el-button--mini{
+      background: $--dk--background-color-gray !important;
+    }
+    .el-dialog__footer {
+      background-color: $--dk-panel-background;
     }
   }
 }

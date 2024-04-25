@@ -2,16 +2,10 @@ import Icon from '@/components/Icons/Icon'
 
 Icon.register({
   'info-circle': {
-    'width': 24,
-    'height': 24,
-    'raw': `<circle cx="12" cy="12" r="11" fill="none" stroke-miterlimit="10"/>
-      <line data-color="color-2" x1="11.959" y1="11" x2="11.959" y2="17" fill="none" stroke-miterlimit="10"/>
-      <circle data-color="color-2" data-stroke="none" cx="11.959" cy="7" r="1" stroke="none"/>`,
-    'g': {
-      'stroke': 'currentColor',
-      'stroke-linecap': 'round',
-      'stroke-linejoin': 'round',
-      'stroke-width': '2'
-    }
+    'width': 15,
+    'height': 15,
+    'raw': `<path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 13.5C10.8137 13.5 13.5 10.8137 13.5 7.5C13.5 4.18629 10.8137 1.5 7.5 1.5C4.18629 1.5 1.5 4.18629 1.5 7.5C1.5 10.8137 4.18629 13.5 7.5 13.5ZM7.5 14.5C11.366 14.5 14.5 11.366 14.5 7.5C14.5 3.63401 11.366 0.5 7.5 0.5C3.63401 0.5 0.5 3.63401 0.5 7.5C0.5 11.366 3.63401 14.5 7.5 14.5Z" fill="currentColor"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 4C7.77614 4 8 4.22386 8 4.5V8C8 8.27614 7.77614 8.5 7.5 8.5C7.22386 8.5 7 8.27614 7 8V4.5C7 4.22386 7.22386 4 7.5 4Z" fill="currentColor"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 9.5C7.77614 9.5 8 9.72386 8 10L8 10.5C8 10.7761 7.77614 11 7.5 11C7.22386 11 7 10.7761 7 10.5L7 10C7 9.72386 7.22386 9.5 7.5 9.5Z" fill="currentColor"/>`,
   }
 })

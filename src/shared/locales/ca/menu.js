@@ -1,5 +1,5 @@
 export default {
-  'app': 'Motrix',
+  'app': 'imFile',
   'file': 'Arxiu',
   'task': 'Tasca',
   'edit': 'Editar',

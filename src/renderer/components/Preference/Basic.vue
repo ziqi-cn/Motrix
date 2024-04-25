@@ -1,7 +1,14 @@
 <template>
   <el-container class="content panel" direction="vertical">
     <el-header class="panel-header" height="84">
-      <h4 class="hidden-xs-only">{{ title }}</h4>
+      <el-row class="panel-row">
+        <el-col :span="4" @click.native="() => nav('basic')" class="active">
+          <h4>{{ $t('preferences.basic') }}</h4>
+        </el-col>
+        <el-col :span="4" @click.native="() => nav('advanced')">
+          <h4>{{ $t('preferences.advanced') }}</h4>
+        </el-col>
+      </el-row>
       <mo-subnav-switcher
         :title="title"
         :subnavs="subnavs"
@@ -55,7 +62,7 @@
           :label-width="formLabelWidth"
         >
           <el-col class="form-item-sub" :span="24">
-            <el-select v-model="form.runMode">
+            <el-select v-model="form.runMode" class="custom-select">
               <el-option
                 v-for="item in runModes"
                 :key="item.value"
@@ -111,10 +118,10 @@
           :label-width="formLabelWidth"
         >
           <el-input placeholder="" v-model="form.dir" :readonly="isMas">
-            <mo-history-directory
+            <!-- <mo-history-directory
               slot="prepend"
               @selected="handleHistoryDirectorySelected"
-            />
+            /> -->
             <mo-select-directory
               v-if="isRenderer"
               slot="append"
@@ -285,6 +292,7 @@
         </el-button>
         <el-button
           @click="resetForm('basicForm')"
+          class="btn_discard"
         >
           {{ $t('preferences.discard') }}
         </el-button>
@@ -524,6 +532,13 @@
       })
     },
     methods: {
+      nav (category = 'basic') {
+        this.$router.push({
+          path: `/preference/${category}`
+        }).catch(err => {
+          console.log(err)
+        })
+      },
       handleLocaleChange (locale) {
         const lng = getLanguage(locale)
         getLocaleManager().changeLanguage(lng)
@@ -567,7 +582,7 @@
       submitForm (formName) {
         this.$refs[formName].validate((valid) => {
           if (!valid) {
-            console.error('[Motrix] preference form valid:', valid)
+            console.error('[imFile] preference form valid:', valid)
             return false
           }
 
@@ -597,7 +612,7 @@
             data.rpcListenPort = this.rpcDefaultPort
           }
 
-          console.log('[Motrix] preference changed data:', data)
+          console.log('[imFile] preference changed data:', data)
 
           this.$store.dispatch('preference/save', data)
             .then(() => {

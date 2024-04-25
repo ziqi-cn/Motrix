@@ -7,7 +7,7 @@ Icon.register({
     'raw': `<line x1="1.5" y1="1.5" x2="10.5" y2="10.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
       <line x1="10.5" y1="1.5" x2="1.5" y2="10.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`,
     'g': {
-      'stroke': 'currentColor',
+      'stroke': '#CBCBCB',
       'stroke-linecap': 'round',
       'stroke-linejoin': 'round',
       'stroke-width': '1'

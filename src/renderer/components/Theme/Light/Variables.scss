@@ -1,7 +1,9 @@
+$--action-color-base: #1f1f1f;
+
 /* App
 -------------------------- */
-$--app-background: transparent !default;
-$--titlebar-actions-color: #1f1f1f !default;
+$--app-background: #1f1f1f !default;
+$--titlebar-actions-color: #eee !default;
 $--titlebar-actions-active-background: #eee !default;
 $--titlebar-close-active-color: #fff !default;
 $--titlebar-close-active-background: #fd0007 !default;
@@ -10,7 +12,7 @@ $--app-version-color: $--color-text-regular !default;
 $--app-engine-title-color: $--color-text-regular !default;
 $--app-engine-info-color: $--color-text-secondary !default;
 $--app-copyright-color: $--color-text-regular !default;
-
+$--app-text-select-color: #CBCBCB !default;
 /* Aside
 -------------------------- */
 $--aside-background: rgba(0, 0, 0, 0.8) !default;
@@ -33,22 +35,22 @@ $--main-background: $--color-white !default;
 /* Panel
 -------------------------- */
 $--panel-background: $--color-white !default;
-$--panel-title-color: $--color-text-primary !default;
+$--panel-title-color: #5B5B5B !default;
 $--panel-border-color: rgba(0, 0, 0, 0.1) !default;
 
 /* Form Actions
 -------------------------- */
 $--form-actions-background: $--color-white !default;
+$--background-color-gray: #F5F7FA  !default;
 
 /* Task
 -------------------------- */
 $--task-action-color: #4d515a !default;
 $--task-action-hover-color: $--color-primary !default;
 $--task-action-disabled-color: rgba(77, 81, 90, 0.5) !default;
-$--task-item-background: #fff !default;
-$--task-item-border-color: #ccc !default;
+$--task-item-background: #131517 !default;
+$--task-item-border-color: #191B1D !default;
 $--task-item-hover-border-color: $--color-primary !default;
-$--task-item-hover-background: $--color-primary !default;
 $--task-item-text-color: #505753 !default;
 $--task-item-action-background: #fff !default;
 $--task-item-action-hover-background: $--color-primary !default;

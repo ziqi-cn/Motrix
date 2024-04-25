@@ -1,37 +1,28 @@
 <template>
   <div class="task-actions">
-    <el-tooltip
-      class="item hidden-md-and-up"
-      effect="dark"
-      placement="bottom"
-      :content="$t('task.new-task')"
-    >
-      <i class="task-action" @click.stop="onAddClick">
-        <mo-icon name="menu-add" width="14" height="14" />
-      </i>
-    </el-tooltip>
-    <el-tooltip
-      class="item"
-      effect="dark"
-      placement="bottom"
-      :content="$t('task.delete-selected-tasks')"
-      v-if="currentList !== 'stopped'"
-    >
-      <i
-        class="task-action"
-        :class="{ disabled: selectedGidListCount === 0 }"
-        @click="onBatchDeleteClick">
-        <mo-icon name="delete" width="14" height="14" />
-      </i>
-    </el-tooltip>
-    <el-tooltip
+    <ul class="task-ul">
+      <li class="task-action" @click="onRefreshClick">
+        <mo-icon name="refresh" width="30" height="30" :spin="refreshing" />
+      </li>
+      <!-- <li class="task-action" @click="onResumeAllClick">
+        <mo-icon name="search" width="30" height="30" />
+      </li> -->
+      <li @click="onAddClick()" class="task-action-add">
+        <i class="task-action">
+          <mo-icon name="task-add" width="8" height="8" />
+        </i>
+        <span>{{$t('task.task-add') }}</span>
+      </li>
+    </ul>
+
+    <!-- <el-tooltip
       class="item"
       effect="dark"
       placement="bottom"
       :content="$t('task.refresh-list')"
     >
       <i class="task-action" @click="onRefreshClick">
-        <mo-icon name="refresh" width="14" height="14" :spin="refreshing" />
+        <mo-icon name="refresh" width="30" height="30" :spin="refreshing" />
       </i>
     </el-tooltip>
     <el-tooltip
@@ -41,7 +32,7 @@
       :content="$t('task.resume-all-task')"
     >
       <i class="task-action" @click="onResumeAllClick">
-        <mo-icon name="task-start-line" width="14" height="14" />
+        <mo-icon name="search" width="30" height="30" />
       </i>
     </el-tooltip>
     <el-tooltip
@@ -51,10 +42,12 @@
       :content="$t('task.pause-all-task')"
     >
       <i class="task-action" @click="onPauseAllClick">
-        <mo-icon name="task-pause-line" width="14" height="14" />
+        <mo-icon name="task-pause-line" width="30" height="30" />
       </i>
-    </el-tooltip>
-    <el-tooltip
+      <span>{{ $t('preferences.basic') }}</span>
+    </el-tooltip> -->
+
+    <!-- <el-tooltip
       class="item"
       effect="dark"
       placement="bottom"
@@ -62,9 +55,9 @@
       v-if="currentList === 'stopped'"
     >
       <i class="task-action" @click="onPurgeRecordClick">
-        <mo-icon name="purge" width="14" height="14" />
+        <mo-icon name="purge" width="30" height="30" />
       </i>
-    </el-tooltip>
+    </el-tooltip> -->
   </div>
 </template>
 
@@ -78,9 +71,11 @@
   import '@/components/Icons/refresh'
   import '@/components/Icons/task-start-line'
   import '@/components/Icons/task-pause-line'
+  import '@/components/Icons/search'
   import '@/components/Icons/delete'
   import '@/components/Icons/purge'
   import '@/components/Icons/more'
+  import '@/components/Icons/task-add'
 
   export default {
     name: 'mo-task-actions',
@@ -122,7 +117,7 @@
       onResumeAllClick () {
         this.$store.dispatch('task/resumeAllTask')
           .then(() => {
-            this.$msg.success(this.$t('task.resume-all-task-success'))
+            // this.$msg.success(this.$t('task.resume-all-task-success'))
           })
           .catch(({ code }) => {
             if (code === 1) {
@@ -133,7 +128,7 @@
       onPauseAllClick () {
         this.$store.dispatch('task/pauseAllTask')
           .then(() => {
-            this.$msg.success(this.$t('task.pause-all-task-success'))
+            // this.$msg.success(this.$t('task.pause-all-task-success'))
           })
           .catch(({ code }) => {
             if (code === 1) {
@@ -162,29 +157,47 @@
 <style lang="scss">
 .task-actions {
   position: absolute;
-  top: 44px;
+  display: inline-flex;
+  top: 32px;
   right: 0;
-  height: 24px;
+  height: 50px;
   padding: 0;
   overflow: hidden;
   user-select: none;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
   cursor: default;
-  text-align: right;
-  color: $--task-action-color;
   transition: all 0.25s;
-  .task-action {
-    display: inline-block;
-    padding: 5px;
-    margin: 0 4px;
-    font-size: 0;
-    cursor: pointer;
-    outline: none;
-    &:hover {
-      color: $--task-action-hover-color;
+
+  .task-ul {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    .task-action {
+      display: inline-flex;
+      margin: 0 15px;
+      font-size: 0;
+      align-items: center;
+      justify-content: center;
     }
-    &.disabled {
-      color: $--task-action-disabled-color;
+
+    .task-action-add {
+      display: inline-flex;
+      padding: 10px;
+
+      background: #0075FF;
+      color: #fff;
+      align-items: center;
+      justify-content: center;
+
+      .task-action {
+        font-size: 0;
+        cursor: pointer;
+        margin: 0 10px;
+      }
     }
   }
-}
-</style>
+
+}</style>

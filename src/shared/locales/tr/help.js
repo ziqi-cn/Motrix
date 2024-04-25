@@ -1,5 +1,5 @@
 export default {
-  'official-website': 'Motrix Web Sitesi',
+  'official-website': 'imFile Web Sitesi',
   'manual': 'Kılavuz',
   'release-notes': 'Sürüm Notları...',
   'report-problem': 'Sorun bildir',

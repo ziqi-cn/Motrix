@@ -115,5 +115,9 @@ export default {
   'BT-download-complete-tips': 'съвет: можете да спрете задачата, за да спрете раздаването',
   'bt-stopping-seeding-tip': 'Спирането на засяването ще отнеме известно време, за да прекъснете връзката, моля изчакайте...',
   'download-fail-message': 'не може да бъде изтеглено {{taskName}}',
-  'download-fail-notify': 'грешка при зареждане'
+  'download-fail-notify': 'грешка при зареждане',
+  'task-add':'Добавить задачу',
+  'task-all-start' : 'Начать все',
+  'task-all-stop' : 'приостановить все',
+  'task-not-data' : 'Не спрашивай'
 }

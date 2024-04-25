@@ -75,7 +75,7 @@
 }
 .no-task {
   display: flex;
-  height: 100%;
+  height: 80%;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -85,7 +85,7 @@
 }
 .no-task-inner {
   width: 100%;
-  padding-top: 360px;
-  background: transparent url('~@/assets/no-task.svg') top center no-repeat;
+  padding-top: 160px;
+  background: transparent url('~@/assets/no-task.svg') center no-repeat;
 }
 </style>

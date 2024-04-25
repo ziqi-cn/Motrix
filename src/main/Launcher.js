@@ -57,7 +57,7 @@ export default class Launcher extends EventEmitter {
       this.handleAppLaunchArgv(process.argv)
     }
 
-    logger.info('[Motrix] openedAtLogin:', this.openedAtLogin)
+    logger.info('[imFile] openedAtLogin:', this.openedAtLogin)
 
     this.handleAppEvents()
   }
@@ -80,15 +80,15 @@ export default class Launcher extends EventEmitter {
   /**
    * handleOpenUrl
    * Event 'open-url' macOS only
-   * "name": "Motrix Protocol",
-   * "schemes": ["mo", "motrix"]
+   * "name": "imFile Protocol",
+   * "schemes": ["mo", "imfile"]
    */
   handleOpenUrl () {
     if (is.mas() || !is.macOS()) {
       return
     }
     app.on('open-url', (event, url) => {
-      logger.info(`[Motrix] open-url: ${url}`)
+      logger.info(`[imFile] open-url: ${url}`)
       event.preventDefault()
       this.url = url
       this.sendUrlToApplication()
@@ -105,7 +105,7 @@ export default class Launcher extends EventEmitter {
       return
     }
     app.on('open-file', (event, path) => {
-      logger.info(`[Motrix] open-file: ${path}`)
+      logger.info(`[imFile] open-file: ${path}`)
       event.preventDefault()
       this.file = path
       this.sendFileToApplication()
@@ -118,12 +118,12 @@ export default class Launcher extends EventEmitter {
    * @param {array} argv
    */
   handleAppLaunchArgv (argv) {
-    logger.info('[Motrix] handleAppLaunchArgv:', argv)
+    logger.info('[imFile] handleAppLaunchArgv:', argv)
 
     // args: array, extra: map
     const { args, extra } = splitArgv(argv)
-    logger.info('[Motrix] split argv args:', args)
-    logger.info('[Motrix] split argv extra:', extra)
+    logger.info('[imFile] split argv args:', args)
+    logger.info('[imFile] split argv extra:', extra)
     if (extra['--opened-at-login'] === '1') {
       this.openedAtLogin = true
     }
@@ -159,6 +159,13 @@ export default class Launcher extends EventEmitter {
     app.on('ready', () => {
       global.application = new Application()
 
+      app.configureHostResolver({
+        secureDnsMode: 'secure',
+        secureDnsServers: [
+          'https://1.1.1.1/dns-query'
+        ]
+      })
+
       const { openedAtLogin } = this
       global.application.start('index', {
         openedAtLogin
@@ -173,7 +180,7 @@ export default class Launcher extends EventEmitter {
 
     app.on('activate', () => {
       if (global.application) {
-        logger.info('[Motrix] activate')
+        logger.info('[imFile] activate')
         global.application.showPage('index')
       }
     })
@@ -181,9 +188,9 @@ export default class Launcher extends EventEmitter {
 
   handleAppWillQuit () {
     app.on('will-quit', () => {
-      logger.info('[Motrix] will-quit')
+      logger.info('[imFile] will-quit')
       if (global.application) {
-        logger.info('[Motrix] will-quit.application.stop')
+        logger.info('[imFile] will-quit.application.stop')
         global.application.stop()
       }
     })

@@ -21,8 +21,8 @@ export default class Context {
   init () {
     // The key of Context cannot be the same as that of userConfig and systemConfig.
     this.context = {
-      platform: platform,
-      arch: arch,
+      platform,
+      arch,
       'log-path': this.getLogPath(),
       'session-path': getSessionPath(),
       'engine-path': getEnginePath(platform, arch),
@@ -30,7 +30,7 @@ export default class Context {
       'aria2-conf-path': getAria2ConfPath(platform, arch)
     }
 
-    logger.info('[Motrix] Context.init===>', this.context)
+    logger.info('[imFile] Context.init===>', this.context)
   }
 
   get (key) {

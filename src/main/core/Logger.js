@@ -11,7 +11,7 @@ if (IS_PORTABLE) {
   logger.transports.file.resolvePath = () => join(PORTABLE_EXECUTABLE_DIR, 'main.log')
 }
 
-logger.info('[Motrix] Logger init')
-logger.warn('[Motrix] Logger init')
+logger.info('[imFile] Logger init')
+logger.warn('[imFile] Logger init')
 
 export default logger

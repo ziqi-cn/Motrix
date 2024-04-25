@@ -27,7 +27,7 @@ export default class ThemeManager extends EventEmitter {
     nativeTheme.on('updated', () => {
       const theme = getSystemTheme()
       this.systemTheme = theme
-      logger.info('[Motrix] nativeTheme updated===>', theme)
+      logger.info('[imFile] nativeTheme updated===>', theme)
       this.emit('system-theme-change', theme)
     })
   }

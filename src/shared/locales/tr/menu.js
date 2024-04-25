@@ -1,5 +1,5 @@
 export default {
-  'app': 'Motrix',
+  'app': 'imFile',
   'file': 'Dosya',
   'task': 'Görev',
   'edit': 'Düzenle',

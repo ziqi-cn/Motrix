@@ -115,5 +115,9 @@ export default {
   'bt-download-complete-tips': 'نصيحة: يمكنك إيقاف التحميل لإنهاء عملية البَذر',
   'bt-stopping-seeding-tip': 'جاري إيقاف عملية البَذر، سيستغرق قطع الاتصال بعض الوقت، الرجاء الانتظار...',
   'download-fail-message': 'فشل تحميل {{taskName}}',
-  'download-fail-notify': 'فشل التحميل'
+  'download-fail-notify': 'فشل التحميل',
+  'task-add':'إضافة مهمة',
+  'task-all-start' : 'ابدأ كل شيء',
+  'task-all-stop' : 'وقفة جميع',
+  'task-not-data' : 'لا توجد مهمة'
 }

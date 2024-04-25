@@ -104,7 +104,7 @@ export default class Application extends EventEmitter {
         this.configListeners[key]()
       })
     } catch (e) {
-      logger.warn('[Motrix] offConfigListeners===>', e)
+      logger.warn('[imFile] offConfigListeners===>', e)
     }
     this.configListeners = {}
   }
@@ -116,7 +116,7 @@ export default class Application extends EventEmitter {
     logger.transports.file.level = logLevel
 
     this.configListeners[key] = userConfig.onDidChange(key, async (newValue, oldValue) => {
-      logger.info(`[Motrix] detected ${key} value change event:`, newValue, oldValue)
+      logger.info(`[imFile] detected ${key} value change event:`, newValue, oldValue)
       logger.transports.file.level = newValue
     })
   }
@@ -167,15 +167,15 @@ export default class Application extends EventEmitter {
   }
 
   async stopEngine () {
-    logger.info('[Motrix] stopEngine===>')
+    logger.info('[imFile] stopEngine===>')
     try {
       await this.engineClient.shutdown({ force: true })
-      logger.info('[Motrix] stopEngine.setImmediate===>')
+      logger.info('[imFile] stopEngine.setImmediate===>')
       setImmediate(() => {
         this.engine.stop()
       })
     } catch (err) {
-      logger.warn('[Motrix] shutdown engine fail: ', err.message)
+      logger.warn('[imFile] shutdown engine fail: ', err.message)
     } finally {
       // no finally
     }
@@ -229,7 +229,7 @@ export default class Application extends EventEmitter {
     const { userConfig } = this.configManager
     const key = 'tray-speedometer'
     this.configListeners[key] = userConfig.onDidChange(key, async (newValue, oldValue) => {
-      logger.info(`[Motrix] detected ${key} value change event:`, newValue, oldValue)
+      logger.info(`[imFile] detected ${key} value change event:`, newValue, oldValue)
       this.trayManager.handleSpeedometerEnableChange(newValue)
     })
   }
@@ -244,7 +244,7 @@ export default class Application extends EventEmitter {
     const { userConfig } = this.configManager
     const key = 'open-at-login'
     this.configListeners[key] = userConfig.onDidChange(key, async (newValue, oldValue) => {
-      logger.info(`[Motrix] detected ${key} value change event:`, newValue, oldValue)
+      logger.info(`[imFile] detected ${key} value change event:`, newValue, oldValue)
       if (is.linux()) {
         return
       }
@@ -261,13 +261,13 @@ export default class Application extends EventEmitter {
     const { userConfig } = this.configManager
     const key = 'protocols'
     this.configListeners[key] = userConfig.onDidChange(key, async (newValue, oldValue) => {
-      logger.info(`[Motrix] detected ${key} value change event:`, newValue, oldValue)
+      logger.info(`[imFile] detected ${key} value change event:`, newValue, oldValue)
 
       if (!newValue || isEqual(newValue, oldValue)) {
         return
       }
 
-      logger.info('[Motrix] setup protocols client:', newValue)
+      logger.info('[imFile] setup protocols client:', newValue)
       this.protocolManager.setup(newValue)
     })
   }
@@ -276,7 +276,7 @@ export default class Application extends EventEmitter {
     const { userConfig } = this.configManager
     const key = 'run-mode'
     this.configListeners[key] = userConfig.onDidChange(key, async (newValue, oldValue) => {
-      logger.info(`[Motrix] detected ${key} value change event:`, newValue, oldValue)
+      logger.info(`[imFile] detected ${key} value change event:`, newValue, oldValue)
       this.trayManager.handleRunModeChange(newValue)
 
       if (newValue !== APP_RUN_MODE.TRAY) {
@@ -293,8 +293,8 @@ export default class Application extends EventEmitter {
     const { userConfig } = this.configManager
     const key = 'proxy'
     this.configListeners[key] = userConfig.onDidChange(key, async (newValue, oldValue) => {
-      logger.info(`[Motrix] detected ${key} value change event:`, newValue, oldValue)
-      this.updateManager.setupProxy(newValue)
+      logger.info(`[imFile] detected ${key} value change event:`, newValue, oldValue)
+      // this.updateManager.setupProxy(newValue)
 
       const { enable, server, bypass, scope = [] } = newValue
       const system = enable && server && scope.includes(PROXY_SCOPES.DOWNLOAD)
@@ -312,7 +312,7 @@ export default class Application extends EventEmitter {
     const { userConfig } = this.configManager
     const key = 'locale'
     this.configListeners[key] = userConfig.onDidChange(key, async (newValue, oldValue) => {
-      logger.info(`[Motrix] detected ${key} value change event:`, newValue, oldValue)
+      logger.info(`[imFile] detected ${key} value change event:`, newValue, oldValue)
       this.localeManager.changeLanguageByLocale(newValue)
         .then(() => {
           this.menuManager.handleLocaleChange(newValue)
@@ -326,7 +326,7 @@ export default class Application extends EventEmitter {
     const { userConfig } = this.configManager
     const key = 'theme'
     this.configListeners[key] = userConfig.onDidChange(key, async (newValue, oldValue) => {
-      logger.info(`[Motrix] detected ${key} value change event:`, newValue, oldValue)
+      logger.info(`[imFile] detected ${key} value change event:`, newValue, oldValue)
       this.themeManager.updateSystemTheme(newValue)
       this.sendCommandToAll('application:update-theme', { theme: newValue })
     })
@@ -336,7 +336,7 @@ export default class Application extends EventEmitter {
     const { userConfig } = this.configManager
     const key = 'show-progress-bar'
     this.configListeners[key] = userConfig.onDidChange(key, async (newValue, oldValue) => {
-      logger.info(`[Motrix] detected ${key} value change event:`, newValue, oldValue)
+      logger.info(`[imFile] detected ${key} value change event:`, newValue, oldValue)
 
       if (newValue) {
         this.bindProgressChange()
@@ -372,7 +372,7 @@ export default class Application extends EventEmitter {
     try {
       await Promise.allSettled(promises)
     } catch (e) {
-      logger.warn('[Motrix] start UPnP mapping fail', e.message)
+      logger.warn('[imFile] start UPnP mapping fail', e.message)
     }
   }
 
@@ -387,7 +387,7 @@ export default class Application extends EventEmitter {
     try {
       await Promise.allSettled(promises)
     } catch (e) {
-      logger.warn('[Motrix] stop UPnP mapping fail', e)
+      logger.warn('[imFile] stop UPnP mapping fail', e)
     }
   }
 
@@ -397,7 +397,7 @@ export default class Application extends EventEmitter {
 
     watchKeys.forEach((key) => {
       this.configListeners[key] = systemConfig.onDidChange(key, async (newValue, oldValue) => {
-        logger.info('[Motrix] detected port change event:', key, newValue, oldValue)
+        logger.info('[imFile] detected port change event:', key, newValue, oldValue)
         const enable = this.configManager.getUserConfig('enable-upnp')
         if (!enable) {
           return
@@ -410,7 +410,7 @@ export default class Application extends EventEmitter {
         try {
           await Promise.allSettled(promises)
         } catch (e) {
-          logger.info('[Motrix] change UPnP port mapping failed:', e)
+          logger.info('[imFile] change UPnP port mapping failed:', e)
         }
       })
     })
@@ -420,7 +420,7 @@ export default class Application extends EventEmitter {
     const { userConfig } = this.configManager
     const key = 'enable-upnp'
     this.configListeners[key] = userConfig.onDidChange(key, async (newValue, oldValue) => {
-      logger.info('[Motrix] detected enable-upnp value change event:', newValue, oldValue)
+      logger.info('[imFile] detected enable-upnp value change event:', newValue, oldValue)
       if (newValue) {
         this.startUPnPMapping()
       } else {
@@ -446,7 +446,7 @@ export default class Application extends EventEmitter {
 
     setTimeout(() => {
       fetchBtTrackerFromSource(source, proxy).then((data) => {
-        logger.warn('[Motrix] auto sync tracker data:', data)
+        logger.warn('[imFile] auto sync tracker data:', data)
         if (!data || data.length === 0) {
           return
         }
@@ -462,7 +462,7 @@ export default class Application extends EventEmitter {
           }
         })
       }).catch((err) => {
-        logger.warn('[Motrix] auto sync tracker failed:', err.message)
+        logger.warn('[imFile] auto sync tracker failed:', err.message)
       })
     }, 500)
   }
@@ -471,7 +471,7 @@ export default class Application extends EventEmitter {
     const enable = this.configManager.getUserConfig('auto-sync-tracker')
     const lastTime = this.configManager.getUserConfig('last-sync-tracker-time')
     const result = checkIsNeedRun(enable, lastTime, AUTO_SYNC_TRACKER_INTERVAL)
-    logger.info('[Motrix] auto sync tracker checkIsNeedRun:', result)
+    logger.info('[imFile] auto sync tracker checkIsNeedRun:', result)
     if (!result) {
       return
     }
@@ -587,7 +587,7 @@ export default class Application extends EventEmitter {
 
       return promises
     } catch (err) {
-      logger.warn('[Motrix] stop error: ', err.message)
+      logger.warn('[imFile] stop error: ', err.message)
     }
   }
 
@@ -666,7 +666,7 @@ export default class Application extends EventEmitter {
     const name = basename(filePath)
     readFile(filePath, (err, data) => {
       if (err) {
-        logger.warn(`[Motrix] read file error: ${filePath}`, err.message)
+        logger.warn(`[imFile] read file error: ${filePath}`, err.message)
         return
       }
       const dataURL = Buffer.from(data).toString('base64')
@@ -681,7 +681,6 @@ export default class Application extends EventEmitter {
     if (is.mas()) {
       return
     }
-
     const enabled = this.configManager.getUserConfig('auto-check-update')
     const proxy = this.configManager.getSystemConfig('all-proxy')
     const lastTime = this.configManager.getUserConfig('last-check-update-time')
@@ -749,7 +748,7 @@ export default class Application extends EventEmitter {
     const sessionPath = this.context.get('session-path')
     setTimeout(() => {
       unlink(sessionPath, (err) => {
-        logger.info('[Motrix] Removed the download seesion file:', err)
+        logger.info('[imFile] Removed the download seesion file:', err)
       })
 
       this.engine.start()
@@ -757,16 +756,16 @@ export default class Application extends EventEmitter {
   }
 
   savePreference (config = {}) {
-    logger.info('[Motrix] save preference:', config)
+    logger.info('[imFile] save preference:', config)
     const { system, user } = config
     if (!isEmpty(system)) {
-      console.info('[Motrix] main save system config: ', system)
+      console.info('[imFile] main save system config: ', system)
       this.configManager.setSystemConfig(system)
       this.engineClient.changeGlobalOption(system)
     }
 
     if (!isEmpty(user)) {
-      console.info('[Motrix] main save user config: ', user)
+      console.info('[imFile] main save user config: ', user)
       this.configManager.setUserConfig(user)
     }
   }
@@ -802,9 +801,9 @@ export default class Application extends EventEmitter {
       this.relaunch()
     })
 
-    this.on('application:check-for-updates', () => {
-      this.updateManager.check()
-    })
+    // this.on('application:check-for-updates', () => {
+    //   this.updateManager.check()
+    // })
 
     this.on('application:change-theme', (theme) => {
       this.themeManager.updateSystemTheme(theme)
@@ -869,7 +868,7 @@ export default class Application extends EventEmitter {
       if (is.dev() || is.mas() || !protocols) {
         return
       }
-      logger.info('[Motrix] setup protocols client:', protocols)
+      logger.info('[imFile] setup protocols client:', protocols)
       this.protocolManager.setup(protocols)
     })
 
@@ -879,7 +878,7 @@ export default class Application extends EventEmitter {
 
     this.on('application:reveal-in-folder', (data) => {
       const { gid, path } = data
-      logger.info('[Motrix] application:reveal-in-folder===>', path)
+      logger.info('[imFile] application:reveal-in-folder===>', path)
       if (path) {
         showItemInFolder(path)
       }
@@ -889,24 +888,24 @@ export default class Application extends EventEmitter {
     })
 
     this.on('help:official-website', () => {
-      const url = 'https://motrix.app/'
+      const url = 'https://imfile.io/'
       this.openExternal(url)
     })
 
-    this.on('help:manual', () => {
-      const url = 'https://motrix.app/manual'
-      this.openExternal(url)
-    })
+    // this.on('help:manual', () => {
+    //   const url = 'https://imfile.io/manual'
+    //   this.openExternal(url)
+    // })
 
-    this.on('help:release-notes', () => {
-      const url = 'https://motrix.app/release'
-      this.openExternal(url)
-    })
+    // this.on('help:release-notes', () => {
+    //   const url = 'https://imfile.io/release'
+    //   this.openExternal(url)
+    // })
 
-    this.on('help:report-problem', () => {
-      const url = 'https://motrix.app/report'
-      this.openExternal(url)
-    })
+    // this.on('help:report-problem', () => {
+    //   const url = 'https://imfile.io/report'
+    //   this.openExternal(url)
+    // })
   }
 
   openExternal (url) {
@@ -970,9 +969,9 @@ export default class Application extends EventEmitter {
   }
 
   handleProgressChange (progress) {
-    if (this.updateManager.isChecking) {
-      return
-    }
+    // if (this.updateManager.isChecking) {
+    //   return
+    // }
     if (!is.windows() && progress === 2) {
       progress = 0
     }
@@ -998,12 +997,12 @@ export default class Application extends EventEmitter {
 
   handleIpcMessages () {
     ipcMain.on('command', (event, command, ...args) => {
-      logger.log('[Motrix] ipc receive command', command, ...args)
+      logger.log('[imFile] ipc receive command', command, ...args)
       this.emit(command, ...args)
     })
 
     ipcMain.on('event', (event, eventName, ...args) => {
-      logger.log('[Motrix] ipc receive event', eventName, ...args)
+      logger.log('[imFile] ipc receive event', eventName, ...args)
       this.emit(eventName, ...args)
     })
   }

@@ -1,24 +1,24 @@
 <template>
   <el-row class="copyright">
     <el-col :span="6" class="copyright-left">
-      <a target="_blank" rel="noopener noreferrer" href="https://motrix.app/">
-        &copy;{{ year }} Motrix
+      <a target="_blank" rel="noopener noreferrer" href="https://imfile.io/">
+        &copy;{{ year }} imFile
       </a>
     </el-col>
-    <el-col :span="18" class="copyright-right">
-      <a target="_blank" rel="noopener noreferrer" href="https://motrix.app/license">
+    <!-- <el-col :span="18" class="copyright-right">
+      <a target="_blank" rel="noopener noreferrer" href="https://imfile.io/license">
         {{ $t('about.license') }}
       </a>
-      <a target="_blank" rel="noopener noreferrer" href="https://motrix.app/about">
+      <a target="_blank" rel="noopener noreferrer" href="https://imfile.io/about">
         {{ $t('about.about') }}
       </a>
-      <a target="_blank" rel="noopener noreferrer" href="https://motrix.app/support">
+      <a target="_blank" rel="noopener noreferrer" href="https://imfile.io/support">
         {{ $t('about.support') }}
       </a>
-      <a target="_blank" rel="noopener noreferrer" href="https://motrix.app/release">
+      <a target="_blank" rel="noopener noreferrer" href="https://imfile.io/release">
         {{ $t('about.release') }}
       </a>
-    </el-col>
+    </el-col> -->
   </el-row>
 </template>
 
@@ -35,7 +35,9 @@
 </script>
 
 <style lang="scss">
+
 .copyright {
+  background: $--panel-background;
   width: 100%;
   font-size: $--font-size-small;
   a {
@@ -51,6 +53,14 @@
   text-align: right;
   a {
     margin-left: 30px;
+  }
+}
+.theme-dark {
+  .copyright {
+    background: $--dk-panel-background;
+    a {
+      color: $--app-copyright-color;
+    }
   }
 }
 </style>

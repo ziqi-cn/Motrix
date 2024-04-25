@@ -54,12 +54,23 @@
 </script>
 
 <style lang="scss">
+.el-dialog.app-about-dialog{
+  background: $--panel-background;
+  border: 1px solid $--color-text-primary;
+  border-radius: 8px;
+}
 .app-about-dialog {
-  max-width: 632px;
+  max-width: 470px;
   min-width: 380px;
   .el-dialog__header {
     padding-top: 0;
     padding-bottom: 0;
+  }
+}
+.theme-dark{
+  .el-dialog.app-about-dialog{
+    background: $--dk-panel-background;
+    border: 1px solid $--color-text-primary;
   }
 }
 </style>

@@ -1,5 +1,5 @@
 export default {
-  'official-website': 'Motrix Weboldala',
+  'official-website': 'imFile Weboldala',
   'manual': 'Kézikönyv',
   'release-notes': 'Valtózások...',
   'report-problem': 'Hiba jelentés',

@@ -6,13 +6,13 @@
     :label-width="formLabelWidth"
     v-if="task"
   >
-    <div class="graphic-box" ref="graphicBox">
+    <!-- <div class="graphic-box" ref="graphicBox">
       <mo-task-graphic
         :outerWidth="graphicWidth"
         :bitfield="task.bitfield"
         v-if="graphicWidth > 0"
       />
-    </div>
+    </div> -->
     <el-form-item :label="`${$t('task.task-progress-info')}: `">
       <div class="form-static-value" style="overflow: hidden">
         <el-row :gutter="12">
@@ -214,5 +214,13 @@
 
 .task-time-remaining {
   margin-left: 1rem;
+}
+.mo-task-activity{
+  .el-form-item__label{
+    color: #CBCBCB;
+  }
+  .form-static-value{
+    color: #CBCBCB;
+  }
 }
 </style>

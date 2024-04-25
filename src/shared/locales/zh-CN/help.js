@@ -1,5 +1,5 @@
 export default {
-  'official-website': 'Motrix 官网',
+  'official-website': 'imFile 官网',
   'manual': '使用手册',
   'release-notes': '发行说明...',
   'report-problem': '报告问题',

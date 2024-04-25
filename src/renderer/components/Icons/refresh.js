@@ -2,15 +2,15 @@ import Icon from '@/components/Icons/Icon'
 
 Icon.register({
   'refresh': {
-    'width': 24,
-    'height': 24,
-    'raw': `<path data-cap="butt" fill="none" stroke-miterlimit="10" d="M22,12c0,5.5-4.5,10-10,10 S2,17.5,2,12S6.5,2,12,2c3.9,0,7.3,2.2,8.9,5.5"/>
-      <polyline fill="none" stroke-miterlimit="10" points="21.8,1.7 21,7.6 15,6.8 "/>`,
+    'width': 30,
+    'height': 30,
+    'raw': `<path d="M22 15C22 18.866 18.866 22 15 22C11.134 22 8 18.866 8 15C8 11.134 11.134 8 15 8C17.0133 8 18.828 8.84992 20.105 10.2105"/>
+    <path d="M20.7656 8.41211L20.7656 10.6827C20.7656 10.7932 20.6761 10.8827 20.5656 10.8827L18.295 10.8827"/>`,
     'g': {
       'stroke': 'currentColor',
       'stroke-linecap': 'round',
-      'stroke-linejoin': 'round',
-      'stroke-width': '2'
+      'stroke-width': '1.5',
+      'fill': 'transparent'
     }
   }
 })

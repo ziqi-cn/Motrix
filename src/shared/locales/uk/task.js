@@ -115,5 +115,9 @@ export default {
   'bt-download-complete-tips': 'Порада: Ви можите зупинити завдання щоб зупинити роздачу',
   'bt-stopping-seeding-tip': 'Припиняючи посів, потрібно буде трохи часу відключити, зачекайте, будь ласка ...',
   'download-fail-message': 'Не вдалося завантажити {{taskName}}',
-  'download-fail-notify': 'Помилка завантаження'
+  'download-fail-notify': 'Помилка завантаження',
+  'task-add':'Додати завдання',
+  'task-all-start' : 'Почати все',
+  'task-all-stop' : 'призупинити все',
+  'task-not-data' : 'Без завдання'
 }

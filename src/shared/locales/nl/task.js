@@ -115,5 +115,9 @@ export default {
   'bt-download-complete-tips': 'Tip: U kunt een taak stoppen om het seeden de beëindigen',
   'bt-stopping-seeding-tip': 'Seeden stoppen. Het duurt even voor de verbindingen zijn verbroken, even geduld...',
   'download-fail-message': 'Download van {{taskName}} mislukt',
-  'download-fail-notify': 'Download mislukt'
+  'download-fail-notify': 'Download mislukt',
+  'task-add':'Voeg taak toe',
+  'task-all-start' : 'Begin allemaal',
+  'task-all-stop' : 'pauzeer alles',
+  'task-not-data' : 'Niet vragen'
 }

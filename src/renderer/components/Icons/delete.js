@@ -2,14 +2,9 @@ import Icon from '@/components/Icons/Icon'
 
 Icon.register({
   'delete': {
-    'width': 24,
-    'height': 24,
-    'raw': `<line fill="none" stroke-miterlimit="10" x1="19" y1="5" x2="5" y2="19" /><line fill="none" stroke-miterlimit="10" x1="19" y1="19" x2="5" y2="5" />`,
-    'g': {
-      'stroke': 'currentColor',
-      'stroke-linecap': 'round',
-      'stroke-linejoin': 'round',
-      'stroke-width': '2'
-    }
+    'width': 15,
+    'height': 15,
+    'raw': `<path fill-rule="evenodd" clip-rule="evenodd" d="M1.87692 1.87797C2.07218 1.68271 2.38876 1.68271 2.58402 1.87797L13.1203 12.4142C13.3156 12.6095 13.3156 12.9261 13.1203 13.1214C12.925 13.3166 12.6085 13.3166 12.4132 13.1214L1.87692 2.58507C1.68165 2.38981 1.68165 2.07323 1.87692 1.87797Z" fill="currentColor"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.1191 1.87789C13.3144 2.07315 13.3144 2.38974 13.1191 2.585L2.58282 13.1213C2.38756 13.3165 2.07098 13.3165 1.87571 13.1213C1.68045 12.926 1.68045 12.6094 1.87571 12.4142L12.412 1.87789C12.6073 1.68263 12.9238 1.68263 13.1191 1.87789Z" fill="currentColor"/>`,
   }
 })
