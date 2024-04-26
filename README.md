@@ -93,6 +93,16 @@ pnpm run build:applesilicon
 
 After building, the application will be found in the project's `release` directory.
 
+#### Build for LoongArch
+
+```bash
+gem install --no-document fpm
+export USE_SYSTEM_FPM="true"
+export ELECTRON_MIRROR=http://ftp.loongnix.cn/electron/LoongArch/
+export electron_use_remote_checksums=1
+npm i --force
+npm run build
+```
 ## 🛠 Technology Stack
 
 - [Electron](https://electronjs.org/)
